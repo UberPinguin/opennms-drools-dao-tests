@@ -1,0 +1,64 @@
+package org.opennms.netmgt.correlation.drools;
+
+import org.opennms.netmgt.correlation.drools.DroolsCorrelationEngine
+import org.opennms.netmgt.xml.event.Event
+import org.opennms.netmgt.xml.event.Parm
+import org.opennms.netmgt.xml.event.Value
+import org.opennms.netmgt.dao.api.NodeDao;
+import org.slf4j.Logger
+import org.opennms.netmgt.model.events.EventBuilder
+import org.opennms.netmgt.model.OnmsNode
+import org.opennms.core.xml.JaxbUtils
+import java.util.List
+
+global Logger LOG;
+global DroolsCorrelationEngine engine;
+
+/*
+   NOTE: This is an antipattern. In practice, you should
+         use a service layer to perform your DAO operations
+         within transactions.
+*/
+global NodeDao nodeDao;
+
+rule "Find nodeId By Event Host Using foreignId"
+    salience 0
+    no-loop true
+    when
+        $event : Event(uei == "uei.opennms.org/test/droolsDaoTestEvent", $uei: uei,
+                       host != "", $host : host)
+        Parm(parmName == "findByForeignId", value.content == "true") from $event.parmCollection
+    then
+        delete($event);
+        Event newEvent = JaxbUtils.unmarshal(Event.class,JaxbUtils.marshal($event));
+        OnmsNode node = nodeDao.findByForeignId("unit-test-foreign-source",$host);
+        if (node != null) {
+            LOG.info("Host {} resolved to nodeId {}", $host, node.getId());
+            newEvent.setNodeid(node.getId().longValue());
+        } else {
+            LOG.error("Failed to resolve a nodeId for host {}", $host);
+            newEvent.setNodeid(0L);
+        }
+        engine.sendEvent(newEvent);
+    end
+
+rule "Find nodeId By Event Host using nodeLabel"
+    salience 0
+    no-loop true
+    when
+        $event : Event(uei == "uei.opennms.org/test/droolsDaoTestEvent", $uei: uei,
+                       host != "", $host : host)
+        Parm(parmName == "findByNodeLabel", value.content == "true") from $event.parmCollection
+    then
+        delete($event);
+        Event newEvent = JaxbUtils.unmarshal(Event.class,JaxbUtils.marshal($event));
+        OnmsNode node = nodeDao.findByLabel($host).get(0);
+        if (node != null) {
+            LOG.info("Host {} resolved to nodeId {}", $host, node.getId());
+            newEvent.setNodeid(node.getId().longValue());
+        } else {
+            LOG.error("Failed to resolve a nodeId for host {}", $host);
+            newEvent.setNodeid(0L);
+        }
+        engine.sendEvent(newEvent);
+    end

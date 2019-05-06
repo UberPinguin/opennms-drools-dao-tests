@@ -1,0 +1,970 @@
+<?xml version="1.0"?>
+<!--
+
+   This file is part of the OpenNMS(R) Application.
+
+   OpenNMS(R) is Copyright (C) 2006 The OpenNMS Group, Inc.  All rights reserved.
+   OpenNMS(R) is a derivative work, containing both original code, included code and modified
+   code that was published under the GNU General Public License. Copyrights for modified
+   and included code are below.
+
+   OpenNMS(R) is a registered trademark of The OpenNMS Group, Inc.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+   For more information contact:
+        OpenNMS Licensing       <license@opennms.org>
+        http://www.opennms.org/
+        http://www.opennms.com/
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.opennms</groupId>
+  <artifactId>opennms-drools-dao-test</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Sample Rules and Tests Demonstrating DAO Inconsistencies Between JUnit4 and the OpenNMS Correlator</name>
+  <url>http://maven.apache.org</url>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <forkMode>pertest</forkMode>
+          <argLine>-Xmx512M -XX:+HeapDumpOnOutOfMemoryError -XX:+UnlockCommercialFeatures -XX:+FlightRecorder</argLine>
+          <includes>
+            <include>**/*Test.java</include>
+          </includes>
+          <systemPropertyVariables>
+            <mock.leaveDatabase>${mock.leaveDatabase}</mock.leaveDatabase>
+            <mock.leaveDatabaseOnFailure>${mock.leaveDatabaseOnFailure}</mock.leaveDatabaseOnFailure>
+            <mock.db.driver>${mock.db.driver}</mock.db.driver>
+            <mock.db.url>${mock.db.url}</mock.db.url>
+            <mock.db.adminUser>${mock.db.adminUser}</mock.db.adminUser>
+            <mock.db.adminPassword>${mock.db.adminPassword}</mock.db.adminPassword>
+            <install.databse.driver>${install.database.driver}</install.databse.driver>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <properties>
+    <axisVersion>1.4</axisVersion>
+    <droolsVersion>7.7.0.Final</droolsVersion>
+    <!--<hsqldbVersion></hsqldbVersion>-->
+    <javassistVersion>3.18.2-GA</javassistVersion>
+    <javaxMailVersion>1.4.5</javaxMailVersion>
+    <junitVersion>4.12</junitVersion>
+    <opennms.version>2018.1.6</opennms.version>
+    <org.jsonVersion>20140107</org.jsonVersion>
+
+    <!-- Versions from OpenNMS's root org.opennms:opennms:2018.1.6 -->
+    <args4jVersion>2.32</args4jVersion>
+    <asmVersion>5.0.4</asmVersion>
+    <asciidoctorVersion>1.5.6</asciidoctorVersion>
+    <asciidoctorjVersion>1.5.6</asciidoctorjVersion>
+    <asciidoctorjPdfVersion>1.5.0-alpha.16</asciidoctorjPdfVersion>
+    <activemqVersion>5.14.5</activemqVersion>
+    <atomikosVersion>3.9.2</atomikosVersion>
+    <awsSqsMessagingVersion>1.0.4</awsSqsMessagingVersion>
+    <awsSdkVersion>1.11.218</awsSdkVersion>
+    <batikVersion>1.7</batikVersion>
+    <bsfVersion>2.4.0</bsfVersion>
+    <camelVersion>2.19.1</camelVersion>
+    <cloverVersion>3.2.0</cloverVersion>
+    <commonsBeanutilsVersion>1.8.3</commonsBeanutilsVersion>
+    <commonsCodecVersion>1.10</commonsCodecVersion>
+    <commonsCollectionsVersion>3.2.2</commonsCollectionsVersion>
+    <commonsConfigurationVersion>1.6</commonsConfigurationVersion>
+    <commonsCsvVersion>1.1</commonsCsvVersion>
+    <commonsDigesterVersion>2.1</commonsDigesterVersion>
+    <commonsJexlVersion>2.1.1</commonsJexlVersion>
+    <commonsJxpathVersion>1.3</commonsJxpathVersion>
+    <commonsIoVersion>2.5</commonsIoVersion>
+    <commonsLangVersion>2.6</commonsLangVersion>
+    <commonsLang3Version>3.4</commonsLang3Version>
+    <commonsLoggingVersion>99.99.99-use-jcl-over-slf4j</commonsLoggingVersion>
+    <commonsMath3Version>3.5</commonsMath3Version>
+    <commonsValidatorVersion>1.6</commonsValidatorVersion>
+    <c3p0Version>0.9.5.2</c3p0Version>
+    <curatorVersion>3.2.1</curatorVersion>
+    <cxfVersion>3.1.11</cxfVersion>
+    <cxfXjcVersion>3.1.0</cxfXjcVersion>
+    <dnsjavaVersion>2.1.3</dnsjavaVersion>
+    <dropwizardMetricsVersion>3.1.2</dropwizardMetricsVersion>
+    <ecjVersion>4.4.2</ecjVersion>
+    <eclipselinkVersion>2.5.1</eclipselinkVersion>
+    <fopVersion>1.0</fopVersion>
+    <freemarkerVersion>2.3.21</freemarkerVersion>
+    <geronimoVersion>1.1.1</geronimoVersion>
+    <groovyVersion>2.4.5</groovyVersion>
+    <guavaVersion>18.0</guavaVersion>
+    <guavaOldVersion>17.0</guavaOldVersion>
+    <gwtVersion>2.6.1</gwtVersion>
+    <gwtPluginVersion>2.6.1</gwtPluginVersion>
+    <hawtioVersion>1.4.68</hawtioVersion>
+    <hibernateValidatorVersion>4.3.2.Final</hibernateValidatorVersion>
+    <hikaricpVersion>2.5.1</hikaricpVersion>
+    <httpcoreVersion>4.4.4</httpcoreVersion>
+    <httpclientVersion>4.5.2</httpclientVersion>
+    <httpasyncclientVersion>4.1.3</httpasyncclientVersion>
+    <jacksonVersion>1.9.13</jacksonVersion>
+    <jackson2Version>2.6.6</jackson2Version>
+    <jasperreportsVersion>6.3.0</jasperreportsVersion>
+    <jasperreportsMavenPluginVersion>1.0-beta-4-OPENNMS-20160912-1</jasperreportsMavenPluginVersion>
+    <jcifsVersion>1.3.14</jcifsVersion>
+    <jcommonVersion>1.0.23</jcommonVersion>
+    <jettyVersion>9.4.14.v20181114</jettyVersion>
+    <jfreechartVersion>1.0.19</jfreechartVersion>
+    <jinteropVersion>2.0.8</jinteropVersion>
+    <jldapVersion>4.3</jldapVersion>
+    <jmxremote.optional.version>1.0_01-ea</jmxremote.optional.version>
+    <jnaVersion>4.4.0</jnaVersion>
+    <jodaTimeVersion>2.1</jodaTimeVersion>
+    <jrubyVersion>9.0.4.0</jrubyVersion>
+    <jsoupVersion>1.7.2</jsoupVersion>
+    <jsonlibVersion>2.4</jsonlibVersion>
+    <jsonlibBundleVersion>2.4_1</jsonlibBundleVersion>
+    <karafVersion>4.1.5</karafVersion>
+    <kafkaStreamsVersion>1.0.1</kafkaStreamsVersion>
+    <kafkaStreamsBundleVersion>1.0.1_1</kafkaStreamsBundleVersion>
+    <felixVersion>3.0.0</felixVersion>
+    <liquibaseVersion>2.0.5-ONMS20160524b</liquibaseVersion>
+    <lmaxDisruptorVersion>3.3.2</lmaxDisruptorVersion>
+    <log4jVersion>99.99.99-use-log4j2</log4jVersion>
+    <log4j2Version>2.8.2</log4j2Version>
+    <mapstructVersion>1.2.0.CR1</mapstructVersion>
+    <minaVersion>2.0.16</minaVersion>
+    <minionKarafVersion>4.0.5</minionKarafVersion>
+    <mockitoVersion>1.10.19</mockitoVersion>
+    <netty4Version>4.1.9.Final</netty4Version>
+    <newtsVersion>1.5.1</newtsVersion>
+    <paxExamVersion>4.11.0</paxExamVersion>
+    <paxSwissboxVersion>1.8.2</paxSwissboxVersion>
+    <paxWebVersion>4.3.0</paxWebVersion>
+    <protobufVersion>2.6.1</protobufVersion>
+    <protobuf3Version>3.5.1</protobuf3Version>
+    <postgresqlVersion>9.4.1211</postgresqlVersion>
+    <powermockVersion>1.6.4</powermockVersion>
+    <osgiVersion>6.0.0</osgiVersion>
+    <osgiCompendiumVersion>5.0.0</osgiCompendiumVersion>
+    <osgiEnterpriseVersion>5.0.0</osgiEnterpriseVersion>
+    <owaspEncoderVersion>1.2.1</owaspEncoderVersion>
+    <owaspHtmlSanitizerVersion>20170515.1</owaspHtmlSanitizerVersion>
+    <quartzVersion>2.2.3</quartzVersion>
+    <rateLimitedLoggerVersion>1.1.0</rateLimitedLoggerVersion>
+    <servletApiVersion>3.1.0</servletApiVersion>
+    <slf4jVersion>1.7.21</slf4jVersion>
+    <snmp4jVersion>2.5.5</snmp4jVersion>
+    <snmp4jagentVersion>2.5.3</snmp4jagentVersion>
+    <smackVersion>4.0.6</smackVersion>
+    <trackerVersion>0.7</trackerVersion>
+    <twitter4jVersion>3.0.6</twitter4jVersion>
+    <xalanVersion>2.7.2</xalanVersion>
+    <xercesVersion>2.9.1</xercesVersion>
+    <xmlApisVersion>1.4.01</xmlApisVersion>
+    <wsdl4jVersion>1.6.3</wsdl4jVersion>
+    <wsmanVersion>1.2.2</wsmanVersion>
+
+    <springVersion>4.2.9.RELEASE_1</springVersion>
+    <!-- ALWAYS change aspectj to match the version referenced in the spring poms -->
+    <aspectjVersion>1.8.6</aspectjVersion>
+    <springWebFlowVersion>2.3.4.RELEASE</springWebFlowVersion>
+    <springSecurityVersion>3.2.7.RELEASE</springSecurityVersion>
+    <springLdapVersion>${springSecurityVersion}</springLdapVersion>
+    <springSecurityKerberosVersion>1.0.1.RELEASE</springSecurityKerberosVersion>
+
+    <!-- moved here from topology features -->
+    <jungVersion>2.0.1</jungVersion>
+    <vaadinVersion>7.2.7</vaadinVersion>
+    <vaadinSharedEpsVersion>1.0.2</vaadinSharedEpsVersion>
+    <vaadin.plugin.version>${vaadinVersion}</vaadin.plugin.version>
+    <vaadinAddonContextMenuVersion>4.2.1</vaadinAddonContextMenuVersion>
+    <vaadinAddonRefresherVersion>1.2.3.7</vaadinAddonRefresherVersion>
+    <vaadinAddonConfirmDialogVersion>2.0.4</vaadinAddonConfirmDialogVersion>
+    <skipPdfGeneration>true</skipPdfGeneration>
+    <skipSignJar>true</skipSignJar>
+
+    <!-- change to match which version of opennms-pluginmanger you want to run -->
+    <pluginmanagerVersion>1.0.7</pluginmanagerVersion>
+    <licencemanagerVersion>1.0.7</licencemanagerVersion>
+    <featuremanagerVersion>1.0.7</featuremanagerVersion>
+
+    <mock.leaveDatabase>false</mock.leaveDatabase>
+    <mock.leaveDatabaseOnFailure>false</mock.leaveDatabaseOnFailure>
+    <mock.db.driver>org.postgresql.Driver</mock.db.driver>
+    <mock.db.url>jdbc:postgresql://localhost:5432/</mock.db.url>
+    <mock.db.adminUser>postgres</mock.db.adminUser>
+    <mock.db.adminPassword/>
+    <install.database.driver>org.postgresql.Driver</install.database.driver>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>${commonsCodecVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>axis</groupId>
+      <artifactId>axis</artifactId>
+      <version>${axisVersion}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>axis</groupId>
+          <artifactId>axis-wsdl4j</artifactId>
+        </exclusion>
+<!--        <exclusion>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>-->
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guavaVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.googlecode.concurrent-locks</groupId>
+      <artifactId>concurrent-locks</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.mchange</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>${c3p0Version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.thoughtworks.xstream</groupId>
+      <artifactId>xstream</artifactId>
+      <!-- mdp temporary change, for kmodule.xml, undo once new format is chosen
+          scope>test</scope-->
+      <version>1.4.10</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>${hikaricpVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>${commonsIoVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>${commonsLangVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-validator</groupId>
+      <artifactId>commons-validator</artifactId>
+      <version>1.2.0</version>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-beanutils</groupId>
+          <artifactId>commons-beanutils</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-collections</groupId>
+          <artifactId>commons-collections</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.jms</groupId>
+      <artifactId>jms</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.mail</groupId>
+      <artifactId>mail</artifactId>
+      <version>${javaxMailVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>${jodaTimeVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junitVersion}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>${commonsCollectionsVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-spring</artifactId>
+      <version>${camelVersion}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${commonsLang3Version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpcore</artifactId>
+      <version>${httpcoreVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>${httpclientVersion}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-codec</groupId>
+          <artifactId>commons-codec</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>${log4j2Version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j2Version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-1.2-api</artifactId>
+      <version>${log4j2Version}</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>${groovyVersion}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.dnsjava</groupId>
+      <artifactId>dnsjava</artifactId>
+      <version>${dnsjavaVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.drools.workshop</groupId>
+      <artifactId>phreak-inspector</artifactId>
+      <version>0.1-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-compiler</artifactId>
+      <version>${droolsVersion}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.thoughtworks.xstream</groupId>
+          <artifactId>xstream</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-core</artifactId>
+      <version>${droolsVersion}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-codec</groupId>
+          <artifactId>commons-codec</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.jdt.core.compiler</groupId>
+      <artifactId>ecj</artifactId>
+      <version>${ecjVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.persistence</groupId>
+      <artifactId>org.eclipse.persistence.moxy</artifactId>
+      <version>2.5.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4jVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>${slf4jVersion}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>log4j-over-slf4j</artifactId>
+      <version>${slf4jVersion}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.dropwizard.metrics</groupId>
+      <artifactId>metrics-core</artifactId>
+      <version>${dropwizardMetricsVersion}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.javassist</groupId>
+      <artifactId>javassist</artifactId>
+      <version>${javassistVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>${org.jsonVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>${jsoupVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.kie</groupId>
+      <artifactId>kie-api</artifactId>
+      <version>${droolsVersion}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opennms.core.snmp</groupId>
+      <artifactId>org.opennms.core.snmp.api</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core.snmp</groupId>
+      <artifactId>org.opennms.core.snmp.implementations.snmp4j</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opennms.core.test-api</groupId>
+      <artifactId>org.opennms.core.test-api.db</artifactId>
+      <version>${opennms.version}</version>
+      <type>jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core.test-api</groupId>
+      <artifactId>org.opennms.core.test-api.http</artifactId>
+      <version>${opennms.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core.test-api</groupId>
+      <artifactId>org.opennms.core.test-api.lib</artifactId>
+      <version>${opennms.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core.test-api</groupId>
+      <artifactId>org.opennms.core.test-api.services</artifactId>
+      <version>${opennms.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opennms.core</groupId>
+      <artifactId>org.opennms.core.api</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core</groupId>
+      <artifactId>org.opennms.core.config</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core</groupId>
+      <artifactId>org.opennms.core.criteria</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core</groupId>
+      <artifactId>org.opennms.core.db.install</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core</groupId>
+      <artifactId>org.opennms.core.db</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core</groupId>
+      <artifactId>org.opennms.core.lib</artifactId>
+      <version>${opennms.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core</groupId>
+      <artifactId>org.opennms.core.logging</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core</groupId>
+      <artifactId>org.opennms.core.soa</artifactId>
+      <version>${opennms.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core</groupId>
+      <artifactId>org.opennms.core.spring</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.core</groupId>
+      <artifactId>org.opennms.core.xml</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opennms.dependencies</groupId>
+      <artifactId>jasypt-dependencies</artifactId>
+      <version>${opennms.version}</version>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.dependencies</groupId>
+      <artifactId>jrobin-dependencies</artifactId>
+      <version>${opennms.version}</version>
+      <type>pom</type>
+      <exclusions>
+        <exclusion>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.dependencies</groupId>
+      <artifactId>spring-dependencies</artifactId>
+      <version>${opennms.version}</version>
+      <type>pom</type>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-collections</groupId>
+          <artifactId>commons-collections</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>xml-apis</groupId>
+          <artifactId>xml-apis</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.dependencies</groupId>
+      <artifactId>spring-security-core-dependencies</artifactId>
+      <version>${opennms.version}</version>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.dependencies</groupId>
+      <artifactId>spring-security-dependencies</artifactId>
+      <version>${opennms.version}</version>
+      <type>pom</type>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-lang</groupId>
+          <artifactId>commons-lang</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpclient</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.dependencies</groupId>
+      <artifactId>spring-test-dependencies</artifactId>
+      <version>${opennms.version}</version>
+      <type>pom</type>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opennms.features.collection</groupId>
+      <artifactId>org.opennms.features.collection.api</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.features.collection</groupId>
+      <artifactId>org.opennms.features.collection.persistence.rrd</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opennms.features.events</groupId>
+      <artifactId>org.opennms.features.events.api</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opennms.features.poller</groupId>
+      <artifactId>org.opennms.features.poller.api</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opennms.features.reporting</groupId>
+      <artifactId>org.opennms.features.reporting.model</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.features</groupId>
+      <artifactId>org.opennms.features.springframework-security</artifactId>
+      <version>${opennms.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-beanutils</groupId>
+          <artifactId>commons-beanutils</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-validator</groupId>
+          <artifactId>commons-validator</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>xml-apis</groupId>
+          <artifactId>xml-apis</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-codec</groupId>
+          <artifactId>commons-codec</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>jaxen</groupId>
+          <artifactId>jaxen</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.codehaus.woodstox</groupId>
+          <artifactId>woodstox-core-asl</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opennms.tests</groupId>
+      <artifactId>org.opennms.tests.mock-elements</artifactId>
+      <version>${opennms.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>drools-correlation-engine</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-alarmd</artifactId>
+      <version>${opennms.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.fusesource.hawtdispatch</groupId>
+          <artifactId>hawtdispatch-transport</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpclient</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.thoughtworks.xstream</groupId>
+          <artifactId>xstream</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-core-asl</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-mapper-asl</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-collections</groupId>
+          <artifactId>commons-collections</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-lang</groupId>
+          <artifactId>commons-lang</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.jasypt</groupId>
+          <artifactId>jasypt</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.camel</groupId>
+          <artifactId>camel-core</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.camel</groupId>
+          <artifactId>camel-spring</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-config-api</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-config-jaxb</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-config-model</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-config</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-correlator</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-dao-api</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-dao-mock</artifactId>
+      <version>${opennms.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-dao</artifactId>
+      <version>${opennms.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-javamail-api</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-model</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-provision-persistence</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-rrd-api</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-rrd-jrobin</artifactId>
+      <version>${opennms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-rrd-tcp</artifactId>
+      <version>${opennms.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.protobuf</groupId>
+          <artifactId>protobuf-java</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms</groupId>
+      <artifactId>opennms-util</artifactId>
+      <version>${opennms.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>xml-apis</groupId>
+          <artifactId>xml-apis</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.compendium</artifactId>
+      <version>${osgiCompendiumVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
+      <version>${osgiVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.enterprise</artifactId>
+      <version>${osgiEnterpriseVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>${postgresqlVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>wsdl4j</groupId>
+      <artifactId>wsdl4j</artifactId>
+      <version>${wsdl4jVersion}</version>
+    </dependency>
+
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <snapshots><enabled>true</enabled></snapshots>
+      <releases><enabled>true</enabled></releases>
+      <id>opennms-release-repo</id>
+      <name>OpenNMS Repository</name>
+      <url>http://maven.opennms.org/content/groups/opennms.org-release</url>
+    </repository>
+
+    <repository>
+      <snapshots><enabled>true</enabled></snapshots>
+      <releases><enabled>true</enabled></releases>
+      <id>opennms-snapshot-repo</id>
+      <name>OpenNMS Repository</name>
+      <url>http://maven.opennms.org/content/groups/opennms.org-snapshot</url>
+    </repository>
+
+    <repository>
+      <snapshots><enabled>false</enabled></snapshots>
+      <releases><enabled>true</enabled></releases>
+      <id>sonatype-public-repo</id>
+      <name>Sonatype Public Maven Repository</name>
+      <url>http://maven.opennms.org/content/repositories/sonatype-public-repo/</url>
+    </repository>
+  </repositories>
+</project>

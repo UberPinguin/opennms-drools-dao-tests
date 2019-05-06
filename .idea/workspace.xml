@@ -1,0 +1,1499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="757be2f6-78b1-4018-97dd-0f1fd6c76dc1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/opennms-base-assembly.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/assembly/daemon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/assembly/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/checknsc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/checkwmi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/config-tester" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/configure-snmp.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/convert_db_to_unicode.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/daemon-stats.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/datacollection-validation.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/encode-wmi-password.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/find-java.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/generate-opennms-thread-dump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/generate-report" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/ilr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/install" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/jmx-config-generator" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/jrobin-inspector" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/liquibase" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/microblog-auth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/newts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/newts-repository-converter" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/opennms" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/provision.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/report-compiler" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/resourcecli" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/runjava" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/send-event.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/send-trap.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/snmp-request" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/system-report" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/upgrade" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/vmwarecimquery" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/vmwareconfigbuilder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/vmwarereqtool" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/bin/xml.reader.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/ackd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/actiond-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/ami-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/asterisk-configuration.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/availability-reports.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/bsf-northbounder-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/c3p0.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/categories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/chart-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/collectd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/create.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/database-reports.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/database-schema.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/.readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/3com.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/acmepacket.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/akcp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/alvarion.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/apc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/ascend.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/asterisk.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/bluecat.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/bluecoat.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/bridgewave.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/brocade.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/ceragon-FA1500.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/checkpoint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/cisco.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/ciscoNexus.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/clavister.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/colubris.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/concord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/cyclades.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/dell.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/ejn.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/equallogic.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/ericsson.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/extreme.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/f5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/force10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/fortinet-fortigate-application-v5.2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/fortinet-fortigate-explicitproxy-v5.2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/fortinet-fortigate-ha-v5.2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/fortinet-fortigate-security-v5.2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/fortinet-fortigate-system-v5.2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/foundry.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/hp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/hwg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/ibm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/ietf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/ipunity.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/isilon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/juniper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/konica.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/kyocera.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/lexmark.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/liebert.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/makelsan.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/mge.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/mib2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/microsoft.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/mikrotik.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/netapp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/netbotz.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/netenforcer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/netscaler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/netsnmp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/nortel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/novell.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/paloalto.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/pfsense.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/postgresql-jdbc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/powerware.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/printers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/riverbed.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/routers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/savin-ricoh.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/servertech.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/snmpinformant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/sofaware.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/sonicwall.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/sun.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/trango.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/vmware-cim.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/vmware3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/vmware4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/vmware5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/vmware6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/wmi.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/xmp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/zertico.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/datacollection/zeus.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/destinationPaths.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/discovery-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/drools-northbounder-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/drools-ticketer.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/email-northbounder-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/enlinkd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/eventconf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/eventd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/3Com.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/A10.AX.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/ADIC-v2.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/AIX.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/AKCP.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/APC.Best.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/APC.Exide.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/APC.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/ATMForum.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/AdaptecRaid.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Adtran.Atlas.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Adtran.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Aedilis.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/AirDefense.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/AlcatelLucent.OmniSwitch.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/AlcatelLucent.SMSBrick.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Allot.NetXplorer.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Allot.SM.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Allot.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Alteon.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Altiga.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/ApacheHTTPD.syslog.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Aruba.AP.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Aruba.Switch.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Aruba.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Ascend.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Audiocodes.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent-DSView.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent.ACS.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent.ACS5000.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent.AMX5000.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent.AMX5010.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent.AMX5020.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent.AMX5030.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent.CCM.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent.DSR.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent.DSR1021.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent.DSR2010.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent.Mergepoint.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Avocent.PMTrap.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/BEA.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/BGP4.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/BackupExec.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/BlackBerryServer-SMIv2.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/BlackBerryServer.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/BladeNetwork.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/BlueCoat.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Bluecat.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Broadcom-BASPTrap.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Brocade.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/CA.ArcServe.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/CPQHPIM.README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/CPQHPIM.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/CRITAPP.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Ceragon-FA1500.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Cisco.5300dchan.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Cisco.CIDS.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Cisco.SCE.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Cisco.airespace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Cisco.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Cisco.mcast.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Cisco2.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/CitrixNetScaler.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Clarent.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Clarinet.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Clavister.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Colubris.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Compuware.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/ComtechEFData.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Concord.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Covergence.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Cricket.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Crossbeam.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/DISMAN-PING.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/DISMAN.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/DMTF.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/DPS.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/DS1.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Dell-Asf.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Dell-DRAC2.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Dell-F10-bgb4-v2.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Dell-F10-chassis.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Dell-F10-copy-config.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Dell-F10-mstp.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Dell-F10-system-component.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Dell-ITassist.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/DellArrayManager.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/DellEquallogic.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/DellOpenManage.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/DellRacHost.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/DellStorageManagement.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Dlink.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/EMC-Celerra.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/EMC-Clariion.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/EMC.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Evertz.7780ASI-IP2.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Evertz.7880IP-ASI-IP-FR.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Evertz.7880IP-ASI-IP.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Evertz.7881DEC-MP2-HD.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Extreme.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/F5.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Fore.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Fortinet-FortiCore-v4.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Fortinet-FortiCore-v52.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Fortinet-FortiGate-v4.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Fortinet-FortiGate-v52.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Fortinet-FortiMail.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Fortinet-FortiManager-Analyzer.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Fortinet-FortiRecorder.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Fortinet-FortiVoice.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/FoundryNetworks.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/FoundryNetworks2.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/FujitsuSiemens.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/GGSN.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/GraphMLAssetPluginEvents.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Groupwise.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/HP.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/HWg.Poseidon.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Hyperic.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/IBM-UMS.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/IBM.EIF.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/IBM.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/IBMRSA2.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/IEEE802dot11.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/INTEL-LAN-ADAPTERS-MIB.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/IPUnity-SES-MIB.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/IPV6.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/ISS.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Infoblox.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Intel.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/InteractiveIntelligence.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/IronPort.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Juniper.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Juniper.ive.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Juniper.mcast.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Juniper.screen.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Junos.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/JunosV1.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/K5Systems.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Konica.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/LLDP.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Liebert.600SM.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Liebert.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Linksys.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/LinuxKernel.syslog.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Lucent.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/MGE-UPS.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/MPLS.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/MRV.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/MSDP.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/MadgeNetworks.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/McAfee.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Microsoft.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/MikrotikRouterOS.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Multicast.standard.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Mylex.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/NORTEL.Contivity.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/NetApp.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/NetSNMP.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Netbotz.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Netgear.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/NetgearProsafeSmartSwitch.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/NetgearProsafeSmartSwitch.syslog.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Netscreen.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Nokia.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Novell.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/OSPF.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/OpenSSH.syslog.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/OpenWrt.syslog.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Oracle.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Overland.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Overture.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/PCube.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/POSIX.syslog.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Packeteer.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Patrol.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Pingtel.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Pixelmetrix.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Polycom.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Postfix.syslog.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Powerware.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Primecluster.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Procmail.syslog.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Quintum.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/RADLAN-MIB.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/RAPID-CITY.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/RFC1382.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/RFC1628.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/RMON.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Rancid.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Raytheon.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Redline.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Rightfax.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/RiverbedSteelhead.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/SNA-NAU.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/SNMP-REPEATER.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Sensaphone.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Sentry.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Siemens-HiPath3000-HG1500.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Siemens-HiPath3000.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Siemens-HiPath4000.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Siemens-HiPath8000-OpenScapeVoice.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Snort.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/SonicWall.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Sonus.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Sudo.syslog.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/SunILOM.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/SwissQual.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Symbol.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Syslogd.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/SystemEdge.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/TUT.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/TransPath.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Trendmicro.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/TrippLite.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/UPS-MIB.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Uptime.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/VMWare.env.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/VMWare.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/VMWare.obsolete.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/VMWare.vc.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/VMWare.vminfo.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Veeam_Backup-Replication.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Veraz.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Waverider.3000.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Websense.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Xerox-V2.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/Xerox.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/fcmgmt.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/ietf.dlsw.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/ietf.docsis.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/ietf.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/ietf.ptopo.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/ietf.sna-dlc.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/ietf.tn3270e.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/ietf.vrrp.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.ackd.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.alarm.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.alarmChangeNotifier.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.bsm.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.capsd.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.catch-all.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.config.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.correlation.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.default.threshold.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.discovery.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.hyperic.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.internal.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.linkd.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.mib.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.minion.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.ncs-component.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.pollerd.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.provisioning.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.remote.poller.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.reportd.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.snmp.trap.translator.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.syslogd.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.ticketd.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/events/opennms.tl1d.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/collectd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/destinationPaths.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/devices/motorola_cpei_150_wimax_gateway/http-datacollection-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/devices/motorola_cpei_150_wimax_gateway/snmp-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/discovery-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/drools-engine.d/nodeParentRules/LocationMonitorRules.drl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/drools-engine.d/nodeParentRules/NodeParentRules.drl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/drools-engine.d/nodeParentRules/drools-engine.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/drools-engine.d/nodeParentRules/locationMonitorRules-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/drools-engine.d/nodeParentRules/nodeParentRules-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/event-proxy/Proxy.events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/event-proxy/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/event-proxy/scriptd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/event-proxy/vacuumd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/groups.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/hyperic-integration/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/hyperic-integration/imports-HQ.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/hyperic-integration/imports-opennms-admin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/javamail-configuration.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/collectd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/jmx-datacollection-config.d/activemq.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/jmx-datacollection-config.d/cassandra.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/jmx-datacollection-config.d/jboss4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/jmx-datacollection-config.d/opennms.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/jmx-datacollection-mbeans/ActiveMQ/5.6/ActiveMQBasic0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/jmx-datacollection-mbeans/Cassandra/1.1.2/CassandraBasic0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/jmx-datacollection-mbeans/JBoss/4/JBossBasic0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/jmx-datacollection-mbeans/Jvm/1.6/JvmBasic0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/jmx-datacollection-mbeans/Jvm/1.6/JvmLegacy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/jmx-datacollection-mbeans/OpenNMS/1.10/OpenNMSBasic0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/jmx-datacollection-mbeans/OpenNMS/1.10/OpenNMSLegacy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/snmp-graph.properties.d/.placeholder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/snmp-graph.properties.d/ActiveMQBasic0.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/snmp-graph.properties.d/JvmBasic.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/snmp-graph.properties.d/JvmLegacy.properties.legacy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/jvm-datacollection/snmp-graph.properties.d/OpenNMSBasic.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/mail-transport-test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/notificationCommands.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/notifications.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/nsclient-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/old-datacollection-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/opennms-server.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/opennms.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/poll-outages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/poller-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/rancid-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/rws-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/scriptd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/scriptd-event-forwarder.bsh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/snmp-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/surveillance-views.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/threshd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/thresholds.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/tl1d-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/examples/viewsdisplay.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/exclude-ueis.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/getManagePercentAvailIntfWindow.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/getManagePercentAvailNodeWindow.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/getManagedOutageForIntfInWindow.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/getManagedOutageForNodeInWindow.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/getManagedServiceCountForIntf.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/getManagedServiceCountForNode.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/getOutageTimeInWindow.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/getPercentAvailabilityInWindow.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/graphml-edge-status/.readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/graphml-vertex-status/.readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/graphml-vertex-status/default.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/groups.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/http-datacollection-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/ifttt-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/infopanel/.readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jasper-reports.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/javamail-configuration.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/javamail-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jcifs.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jdbc-datacollection-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jira.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jms-northbounder-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jmx-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jmx-datacollection-config.d/cassandra30x-newts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jmx-datacollection-config.d/cassandra30x.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jmx-datacollection-config.d/jboss.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jmx-datacollection-config.d/kafka.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jmx-datacollection-config.d/minion.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jmx-datacollection-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/jmxremote.access" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/ksc-performance-reports.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/microblog-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/modemConfig.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/notifd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/notificationCommands.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/notifications.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/opennms-activemq.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/opennms-datasources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/opennms-server.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/opennms.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/opennms.properties.d/.readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/opennms.service" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/org.opennms.features.topology.app.icons.application.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/org.opennms.features.topology.app.icons.bsm.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/org.opennms.features.topology.app.icons.default.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/org.opennms.features.topology.app.icons.linkd.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/org.opennms.features.topology.app.icons.list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/org.opennms.features.topology.app.icons.pathoutage.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/org.opennms.features.topology.app.icons.sfree.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/org.opennms.features.topology.app.icons.vmware.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/otrs.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/poll-outages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/poller-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/provisiond-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/rancid-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/remedy.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/remote-repository.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/AssetManagementMaintExpired.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/AssetManagementMaintStrategy.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/AvailabilitySummary.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/AveragePeakTrafficRates.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/DiskUsageForCTX.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/Early-Morning-Report.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/EventAnalysis.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/InterfaceAvailabilityReport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/NodeAvailabilityReport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/ResponseTime.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/ResponseTimeCharts.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/ResponseTimeSummary.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/SerialInterfaceUtilizationSummary.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/SnmpInterfaceOperAvailabilityReport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/TopIOWait.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/TotalBytesTransferredByInterface.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/assets/images/company-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/assets/styles/defaultStyles.jrtx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/assets/styles/styles.jrtx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/sample-report.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/95thPercentileTrafficRate_subreport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/AvailabilitySummaryChart_subreport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/DiskUsageForCTXServers_subreport1.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/InterfaceAvailabilityReport_subreport1.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/NodeId_to_NodeLabel_subreport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/PeakTraffic_subreport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/ResponseTimeSummary_Availability_Offenders_subreport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/ResponseTimeSummary_Availability_subreport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/ResponseTimeSummary_Response_Offenders_subreport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/ResponseTimeSummary_subreport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/ResponseTime_subreport1.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/Top25PercentDown_subreport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/report-templates/subreports/TotalBytesTransferredByInterface_subreport1.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/reportd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/resource-types.d/wsman-dell-idrac.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/resource-types.d/wsman-microsoft-windows.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/response-adhoc-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/response-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/rrd-configuration.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/rt.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/rtc-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/rws-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/rws-nbinventoryreport.xsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/rws-rancidlistreport.xsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/scan-report-metadata.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/scriptd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/service-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/site-status-views.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-adhoc-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-asset-adapter-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/.placeholder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/acmepacket-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/activemq-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/adonis-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/adsl-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/airport-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/aix-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/akcp-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/alvarion-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/apc-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/ascend-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/asterisk-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/bgp-ietf-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/bluecoat-sgproxy-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/bridgewave-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/brocade-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/ca-empire-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/cassandra-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/cassandra-newts-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/ceragon-FA1500.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/checkpoint-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/cisco-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/ciscoNexus-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/clavister-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/colubris-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/cyclades-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/dell-openmanage-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/dell-rac-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/dns-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/ejn-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/elasticsearch-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/equallogic-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/ericsson-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/extreme-networks-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/f5-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/force10-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/fortinet-fortigate-application-v5.2-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/fortinet-fortigate-explicitProxy-v5.2-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/fortinet-fortigate-ha-v5.2-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/fortinet-fortigate-security-v5.2-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/fortinet-fortigate-system-v5.2-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/foundry-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/framerelay-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/host-resources-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/hp-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/hpux-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/hwg-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/ipunity-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/jboss-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/juniper-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/jvm-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/kafka-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/liebert-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/lmsensors-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/mailmarshal-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/mcast-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/mge-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/mib2-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/microsoft-exchange-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/microsoft-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/microsoft-http-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/microsoft-iis-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/microsoft-lcs-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/microsoft-sql-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/microsoft-windows-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/microsoft-winrm-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/microsoft-wmi-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/mikrotik-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/mysql-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/netapp-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/netbotz-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/netenforcer-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/netscaler-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/netsnmp-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/nortel-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/novell-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/opennms-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/opennms-minion-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/paloalto-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/pfsense-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/postgresql-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/riverbed-steelhead-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/servertech-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/snmp-informant-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/sofaware-embeddedngx-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/sonicwall.graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/sun-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/trango-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware-cim-graph-simple.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware3-graph-simple.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware4-graph-simple.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware5-cpu-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware5-datastore-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware5-disk-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware5-host-based-replication-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware5-memory-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware5-network-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware5-power-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware5-storage-adapter-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware5-storage-path-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware5-system-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware5-virtual-disk-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/vmware6-graph-simple.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/wmi-memory-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/wmi-physdisk-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/wsman-dell-idrac.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/wsman-microsoft-windows.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/xmp-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/xups-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/zertico-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-graph.properties.d/zeus-graph.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-hardware-inventory-adapter-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmp-interface-poller-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmptrap-northbounder-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/snmptrap-northbounder-mappings.d/.readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/statsd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/support.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/surveillance-views.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/syslog-northbounder-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/syslog/ApacheHTTPD.syslog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/syslog/LinuxKernel.syslog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/syslog/NetgearProsafeSmartSwitch.syslog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/syslog/OpenSSH.syslog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/syslog/OpenWrt.syslog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/syslog/POSIX.syslog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/syslog/Postfix.syslog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/syslog/Procmail.syslog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/syslog/Sudo.syslog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/syslogd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/threshd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/thresholds.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/tl1d-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/translator-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/trapd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/trend-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/users.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/vacuumd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/viewsdisplay.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/vmware-cim-datacollection-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/vmware-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/vmware-datacollection-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/wmi-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/wmi-datacollection-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/wsman-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/wsman-datacollection-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/wsman-datacollection.d/dell-idrac.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/wsman-datacollection.d/microsoft-windows.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/filtered/etc/xmpp-configuration.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/NMS-9303-cleanup-deprecated-events.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/NMS-9303-cleanup-deprecated-events.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/alvarion/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/alvarion/link_quality" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/alvarion/run_link_quality" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/big-ol-alarm-script/alarmscript.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/downOpenNMS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/downOpenNMS.README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/failover/etc/opennms-datasources-failover.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/failover/etc/opennms-datasources-standby.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/failover/etc/sync-envvars" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/failover/etc/sync-off.crontab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/failover/etc/sync-on.crontab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/failover/scripts/failover.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/failover/scripts/sync-state.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/failover/scripts/sync.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/find-duplicate-dependencies.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/fix-colons-on-graph-templates.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/gptest.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/hyperic-integration/alertTemplates/opennms_notify.gsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/hyperic-integration/imports-hq.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/hyperic-integration/opennms/app/AlertstatusController.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/hyperic-integration/opennms/app/ExporterController.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/hyperic-integration/opennms/app/ModelexportController.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/hyperic-integration/opennms/etc/opennms_i18n.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/hyperic-integration/opennms/init.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/hyperic-integration/opennms/views/exporter/index.gsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/hyperic-integration/opennms/views/templates/standard.gsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/jmx-config-fix.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/ldap_user_group_creator/PagerEmailAddresses.pm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/ldap_user_group_creator/cron_ldap_saugblaser.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/ldap_user_group_creator/ldap_group_saugblaser.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/ldap_user_group_creator/ldap_user_saugblaser.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mail.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mail.pl.README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/maint_events.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/all.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/ant/basic/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/dist/mibparser.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/dist/parseMib.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/lib/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/lib/javacc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/APPLICATION-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/ATM-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/CHARACTER-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/CISCO-CCM-MIB.my" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/CISCO-SMI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/CISCO-SMI-V1SMI.my" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/CLNS-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/DECNET-PHIV-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/DSA-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/EtherLike-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/FDDI-SMT73-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/HOST-RESOURCES-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/IANAifType-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/IF-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/PARALLEL-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/Printer-MIB.mib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1066-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1155-SMI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1156-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1158.MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1213-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1213-MIB.sav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1229-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1231-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1232-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1233-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1253-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1271-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1289.MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1304-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1315-FRAME" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1315.MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1316-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1317-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1318-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1381-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1382-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1389-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1398-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1406-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1407-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1414-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1623.MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1643.MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1665.MI2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RFC1743.MI2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RMON-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/RMON2-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/SIP-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/SNA-NAU-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/SNMPv2-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/SNMPv2-SMI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/SNMPv2-TC" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/SNMPv2-TM" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/TCPIPX-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/TOKEN-RING-RMON-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/TOKENRING-MIB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/hpmcCluster.mib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/hpmcSGCluster.mib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/mibs/rfc1212.mib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/Errors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/JJTParseMibState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/OidValues.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/ParseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/ParseMib.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/ParseMib.jj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/ParseMib.jjt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/ParseMibConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/ParseMibTokenManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/ParseMibTreeConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/SimpleCharStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/SimpleNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/TokenMgrError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/mibparser/src/Version.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/opennms.mib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/LISCENCE(gpl).txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/doc/PackageOverview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/doc/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/doc/qosddocumentation;1.4.odt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/doc/qosddocumentation;1.4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/jboss/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/jboss/openoss-jms-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/jboss/openoss_qos_jboss_start.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/jboss/qosbean.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/jboss/uil2-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms/QoSD-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms/QoSDrxOssBeanRunnerSpringContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms/opennms.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms/qosd.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms/qosdrx.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms/rmi.policy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms/rrd-configuration.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms/service-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms_REVISED_deploy.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms_fault_config/eventconf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms_fault_config/eventconf.xml.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms_fault_config/eventconf_NoOpennmsalarms.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms_fault_config/events/ossj_events.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms_fault_config/inventory/model-import.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms_fault_config/inventory/ossj_test_db.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/opennms_fault_config/vacuumd-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/testtraps/multipleossjtesttraps_clear.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/testtraps/multipleossjtesttraps_raise.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/testtraps/ossjtesttraps_clear.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/testtraps/ossjtesttraps_raise.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/testtraps/trapgen" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/tomcat55/images/OSS_logo_final.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/tomcat55/images/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/tomcat55/server.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/qos_example_configuration/tomcat55/tomcat55.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/testscripts/opennms_IF.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/testscripts/opennms_IFOpenOSS1.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/testscripts/opennms_IFOpenOSS2.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/testscripts/opennms_IFOpenOSS3.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/testscripts/qosclient.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/testscripts/qosclientOpenOSS1.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/testscripts/qosclientOpenOSS2.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/qosdaemon/testscripts/qosclientOpenOSS3.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/radius_test.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/rtc_restart.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/send-event.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/snmpwalk-debug.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/snmpwalk-scrub.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/update-copyright.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/webreport.pl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/contrib/xmlrpcd.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/etc/examples/drools-ticketer-rules.drl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/etc/examples/jetty.keystore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/etc/log4j2-tools.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/etc/reports/HTMLAvailReport.xsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/etc/reports/PDFAvailReport.xsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/etc/reports/SVGAvailReport.xsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/etc/reports/logo.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/logs/.readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/.readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/mibs/compiled/IANAifType-MIB.mib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/mibs/compiled/IF-MIB.mib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/mibs/compiled/RFC-1212.mib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/mibs/compiled/RFC1155-SMI.mib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/mibs/compiled/RFC1213-MIB.mib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/mibs/compiled/SNMPv2-CONF.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/mibs/compiled/SNMPv2-MIB.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/mibs/compiled/SNMPv2-SMI.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/mibs/compiled/SNMPv2-TC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/reports/.readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/rrd/.readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/rrd/response/.readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opennms-base-assembly/src/main/resources/share/rrd/snmp/.readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/CorrelationRulesTestCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/DroolsNodeDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/MockCorrelator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-engine-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-engine.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-rules.drl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/drools-engine.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/test-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/test-fixture.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/org/opennms/drools/dao/test/CorrelationRulesTestCase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/org/opennms/drools/dao/test/DroolsNodeDaoTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/org/opennms/drools/dao/test/MockCorrelator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/test-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/test-fixture.properties" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/drools-engine.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-engine-context.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/test-context.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-engine.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-rules.drl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/DroolsNodeDaoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2145">
+              <caret line="174" selection-start-line="174" selection-end-line="174" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1247#1248#0" expanded="true" />
+                <element signature="e#1278#1279#0" expanded="true" />
+                <element signature="e#1397#1428#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="510">
+                <caret line="26" column="71" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/test/java/org/opennms/opennms-drools-dao-test/CorrelationRulesTestCase.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/test-context.xml" />
+        <option value="$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-engine-context.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/NodeDaoTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/drools-engine.xml" />
+        <option value="$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-rules.drl" />
+        <option value="$PROJECT_DIR$/readme.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/DroolsNodeDaoTest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="createModuleGroups" value="true" />
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+    <option name="disabledProfiles">
+      <list>
+        <option value="enable.snapshots" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="opennms-drools-dao-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="junit_correlator_dao_test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="opennms-drools-dao-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="junit_correlator_dao_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="opennms-drools-dao-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="junit_correlator_dao_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="opennms-drools-dao-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="junit_correlator_dao_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="opennms-drools-dao-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="junit_correlator_dao_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="opennms-drools-dao-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="junit_correlator_dao_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="opennms-home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="opennms-drools-dao-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="junit_correlator_dao_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="opennms-home" type="462c0819:PsiDirectoryNode" />
+              <item name="etc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="opennms-drools-dao-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="junit_correlator_dao_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="opennms-home" type="462c0819:PsiDirectoryNode" />
+              <item name="etc" type="462c0819:PsiDirectoryNode" />
+              <item name="drools-engine.d" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="opennms-drools-dao-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="junit_correlator_dao_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="opennms-home" type="462c0819:PsiDirectoryNode" />
+              <item name="etc" type="462c0819:PsiDirectoryNode" />
+              <item name="drools-engine.d" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-test-engine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="opennms-drools-dao-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="junit_correlator_dao_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.4177407" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.opennms.drools.dao.test" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.DroolsNodeDaoTest">
+    <configuration name="DroolsNodeDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="opennms-drools-dao-test" />
+      <shortenClasspath name="MANIFEST" />
+      <option name="PACKAGE_NAME" value="org.opennms.drools.dao.test" />
+      <option name="MAIN_CLASS_NAME" value="org.opennms.drools.dao.test.DroolsNodeDaoTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DroolsNodeDaoTest.identifyNodeByForeignId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="opennms-drools-dao-test" />
+      <shortenClasspath name="MANIFEST" />
+      <option name="PACKAGE_NAME" value="org.opennms.drools.dao.test" />
+      <option name="MAIN_CLASS_NAME" value="org.opennms.drools.dao.test.DroolsNodeDaoTest" />
+      <option name="METHOD_NAME" value="identifyNodeByForeignId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DroolsNodeDaoTest.identifyNodeByLabel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="opennms-drools-dao-test" />
+      <shortenClasspath name="MANIFEST" />
+      <option name="PACKAGE_NAME" value="org.opennms.drools.dao.test" />
+      <option name="MAIN_CLASS_NAME" value="org.opennms.drools.dao.test.DroolsNodeDaoTest" />
+      <option name="METHOD_NAME" value="identifyNodeByLabel" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <shortenClasspath name="MANIFEST" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DroolsNodeDaoTest" />
+        <item itemvalue="JUnit.DroolsNodeDaoTest.identifyNodeByForeignId" />
+        <item itemvalue="JUnit.DroolsNodeDaoTest.identifyNodeByLabel" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="757be2f6-78b1-4018-97dd-0f1fd6c76dc1" name="Default Changelist" comment="" />
+      <created>1557169978138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557169978138</updated>
+      <workItem from="1557169979433" duration="7490000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="DroolsNodeDaoTest_identifyNodeByLabel - 2019.05.06 at 16h 26m 17s.xml">
+      <configuration name="DroolsNodeDaoTest.identifyNodeByLabel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DroolsNodeDaoTest_identifyNodeByLabel - 2019.05.06 at 16h 26m 54s.xml">
+      <configuration name="DroolsNodeDaoTest.identifyNodeByLabel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DroolsNodeDaoTest_identifyNodeByLabel - 2019.05.06 at 16h 27m 39s.xml">
+      <configuration name="DroolsNodeDaoTest.identifyNodeByLabel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DroolsNodeDaoTest_identifyNodeByForeignId - 2019.05.06 at 16h 31m 14s.xml">
+      <configuration name="DroolsNodeDaoTest.identifyNodeByForeignId" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DroolsNodeDaoTest_identifyNodeByForeignId - 2019.05.06 at 16h 33m 42s.xml">
+      <configuration name="DroolsNodeDaoTest.identifyNodeByForeignId" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DroolsNodeDaoTest_identifyNodeByForeignId - 2019.05.06 at 16h 35m 42s.xml">
+      <configuration name="DroolsNodeDaoTest.identifyNodeByForeignId" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DroolsNodeDaoTest_identifyNodeByForeignId - 2019.05.06 at 16h 37m 37s.xml">
+      <configuration name="DroolsNodeDaoTest.identifyNodeByForeignId" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DroolsNodeDaoTest - 2019.05.06 at 16h 42m 03s.xml">
+      <configuration name="DroolsNodeDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DroolsNodeDaoTest - 2019.05.06 at 17h 54m 00s.xml">
+      <configuration name="DroolsNodeDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DroolsNodeDaoTest - 2019.05.06 at 18h 12m 11s.xml">
+      <configuration name="DroolsNodeDaoTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="7490000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" weight="0.32936078" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.38353196" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/test-fixture.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-engine.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-test-engine.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/CorrelationRulesTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-463">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-engine-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/test-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/drools-engine.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-rules.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="510">
+            <caret line="26" column="71" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/DroolsNodeDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2145">
+          <caret line="174" selection-start-line="174" selection-end-line="174" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1247#1248#0" expanded="true" />
+            <element signature="e#1278#1279#0" expanded="true" />
+            <element signature="e#1397#1428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4177407" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4177407" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>opennms-drools-dao-test</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4177407" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
