@@ -1,0 +1,591 @@
+
+package org.opennms.netmgt.correlation.drools;
+
+import java.io.File
+import java.io.FileOutputStream
+import java.io.InputStreamReader
+import java.io.InputStream
+import java.io.IOException
+import java.io.OutputStreamWriter
+import java.io.Writer
+import java.lang.Process
+import java.lang.ProcessBuilder
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.List
+import java.util.ArrayList
+import java.util.Map
+
+import org.apache.http.HttpResponse
+import org.apache.http.auth.AuthScope
+import org.apache.http.auth.UsernamePasswordCredentials
+import org.apache.http.client.ClientProtocolException
+import org.apache.http.client.CredentialsProvider
+import org.apache.http.impl.client.CloseableHttpClient
+import org.apache.http.client.methods.HttpGet
+import org.apache.http.client.methods.HttpPost
+import org.apache.http.client.methods.HttpPut
+import org.apache.http.entity.StringEntity
+import org.apache.http.impl.client.BasicCredentialsProvider
+import org.apache.http.impl.client.HttpClients
+import org.apache.http.util.EntityUtils
+
+import org.opennms.core.xml.JaxbUtils
+import org.opennms.netmgt.config.PollOutagesConfigFactory
+import org.opennms.netmgt.config.poller.outages.Outage
+import org.opennms.netmgt.correlation.drools.DroolsCorrelationEngine
+import org.opennms.netmgt.model.OnmsMemo
+import org.opennms.netmgt.model.OnmsNode
+import org.opennms.netmgt.model.OnmsNodeList
+import org.opennms.netmgt.model.events.EventBuilder
+import org.opennms.netmgt.provision.persist.requisition.Requisition
+import org.opennms.netmgt.provision.persist.requisition.RequisitionNode
+import org.opennms.netmgt.xml.event.AlarmData
+import org.opennms.netmgt.xml.event.Event
+import org.opennms.netmgt.xml.event.Parm
+import org.opennms.netmgt.xml.event.Value
+import org.apache.commons.validator.Validator
+import java.net.Inet4Address
+import org.apache.http.conn.util.InetAddressUtils
+import org.opennms.core.criteria.CriteriaBuilder
+import org.slf4j.Logger
+import com.kroger.ssmtools.opennms.daoservice.OpenNMSDaoTransactionService
+import com.kroger.ssmtools.opennms.nodeprovisioning.NodeRequisitionManager
+import org.opennms.netmgt.xml.event.Logmsg
+import org.opennms.netmgt.model.OnmsEvent
+import org.opennms.netmgt.model.OnmsSeverity
+import java.net.InetAddress
+import com.kroger.ssmtools.opennms.util.Sanitation
+import org.jfree.util.Log
+
+global OpenNMSDaoTransactionService daoService;
+global NodeRequisitionManager nrm;
+global String ENRICHED_UEI_NAMESPACE;
+global String FINISH_PARENTING_UEI;
+global String BEGIN_PARENTING_UEI;
+global String NODE_PROVISIONING_UEI;
+global String OUTAGE_SUPPRESSED_UEI;
+global String PARM_IMPORT_FAILURE_MESSAGE;
+global String PARM_IMPORT_RESOURCE;
+global String UEI_REPLACEMENT_REGEX;
+global Integer REQUISITION_RELOAD_DELAY_MS;
+
+global DroolsCorrelationEngine engine;
+global Logger LOG;
+global PollOutagesConfigFactory pocf;
+
+rule "enrich: Resume Reparenting After Provisioning"
+	salience 100000
+    when
+        $event : Event(uei == FINISH_PARENTING_UEI)
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+        Parm(parmName == "pendingEvent", value.content != "", pendingEvent : value.content) from $event.parmCollection
+        Parm(parmName == "nodeId", value.content != "", $nodeId : value.content) from $event.parmCollection
+        Parm(parmName == "node_label", value.content != "", hostName : value.content) from $event.parmCollection
+    then
+        String logTag = "resumeReparenting ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+        delete($event);
+        Event evtReparented = JaxbUtils.unmarshal(Event.class, (String)pendingEvent);
+        long nodeId = Long.valueOf($nodeId);
+		String operation = "Re-parented event to node "+nodeId+" based on hostname "+hostName;
+		logOp(evtReparented, nodeId, operation);
+		evtReparented.setNodeid(nodeId);
+		insert(evtReparented);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+    end
+
+rule "enrich: New Reparenting Pattern"
+	salience 100000
+	when
+	    $event : Event(uei : uei == BEGIN_PARENTING_UEI)
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+        Parm(parmName == "pendingEvent", value.content != "", pendingEvent : value.content) from $event.parmCollection
+    then
+        delete($event);
+        String logTag = "new_nodeparenting ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+        LOG.debug("{} {} : {}", logTag,$uuid,$event);
+        Event evtReparentCandidate = JaxbUtils.unmarshal(Event.class, (String)pendingEvent);
+        evtReparentCandidate.addParm( new Parm("transform_uei","false") );
+        insert(evtReparentCandidate);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+rule "filter: Delete Events with Null Host and Hostname"
+    salience  100020
+	no-loop true
+	when
+		$event : Event( host == null, uei != FINISH_PARENTING_UEI, nodeid == 0 )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+		not Parm(parmName == "requisitionName", value.content != "") from $event.parmCollection
+        not Parm(parmName == "hostname", value.content != null && value.content != "" ) from $event.parmCollection
+	then
+	    String logTag = "dropEventWithNullHost ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+        delete($event);
+        LOG.info("{} {} Event with a null host and no non-empty hostname parm deleted.", logTag, $uuid);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+rule "filter: Delete Events with Empty Host and Hostname"
+    salience  100020
+	no-loop true
+	when
+		$event : Event( host == "", uei != FINISH_PARENTING_UEI, nodeid == 0 )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+		not Parm(parmName == "requisitionName", value.content != "") from $event.parmCollection
+        not Parm(parmName == "hostname", value.content != null && value.content != "" ) from $event.parmCollection
+	then
+	    String logTag = "dropEventWithNoHost ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+        delete($event);
+        LOG.info("{} {} Event with a null host and no non-empty hostname parm deleted.", logTag, $uuid);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+rule "normalize: copy mc_host to infra_ci Parm"
+    salience  100010
+    no-loop true
+    when
+        $event : Event (nodeid == 0)
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+        Parm(parmName == "mc_host", value.content != "", $mcHost : value.content) from $event.parmCollection
+    then
+        String logTag = "normalize:copy-mc_host ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+        $event.getParm("mc_host").getValue().setContent("");
+        update($event);
+        modify($event) {addParm(new Parm("infra_ci",$mcHost))};
+        LOG.info("{} END handling event {}", logTag, $uuid);
+    end
+
+rule "normalize: Sanitize hostname Parm"
+    salience 100010
+    no-loop true
+    when
+        $event : Event( uei != FINISH_PARENTING_UEI, nodeid == 0 )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+        not Parm(parmName == "requisitionName") from $event.parmCollection
+        Parm(parmName == "hostname", value.content != null && value.content != "", $host : value.content ) from $event.parmCollection
+        not Parm(parmName == "host_sanitized") from $event.parmCollection
+    then
+        String logTag = "normalizeHostnameParm ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+        String hostName = Sanitation.sanitizeHostname($host);
+        if (!hostName.equals($host)) {
+            logOp($event,0L,"Sanitized hostname from "+$host+" to "+hostName);
+        }
+        $event.getParm("hostname").getValue().setContent(hostName);
+        modify($event) { setHost(hostName), addParm(new Parm("host_sanitized","true")) };
+        update($event);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+    end
+
+rule "normalize: Sanitize Host"
+    salience 100010
+    no-loop true
+    when
+        $event : Event( uei != FINISH_PARENTING_UEI, host != null && host != "", $host : host, nodeid == 0 )
+        Parm(parmName == "opennms_traceId", $uuid : value.content != "") from $event.parmCollection
+        not Parm(parmName == "requisitionName") from $event.parmCollection
+        not Parm(parmName == "hostname", value.content != "") from $event.parmCollection
+        not Parm(parmName == "host_sanitized") from $event.parmCollection
+    then
+        String logTag = "normalizeHost ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+        String hostName = Sanitation.sanitizeHostname($host);
+		if (!hostName.equals($host)) {
+		    logOp($event,0L,"Sanitized hostname from "+$host+" to "+hostName);
+        }
+        modify($event) { setHost(hostName), addParm(new Parm("hostname",hostName)), addParm(new Parm("host_sanitized","true")) };
+        update($event);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+    end
+
+rule "enrich: Determine host requisition"
+	salience 100000
+	no-loop true
+	when
+		$event : Event( uei != FINISH_PARENTING_UEI, nodeid == 0 )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+		not Parm(parmName == "requisitionName", value.content != "") from $event.parmCollection
+        Parm(parmName == "hostname", value.content != null && value.content != "", $host : value.content) from $event.parmCollection
+	then
+	    String logTag = "getRequisitionNameByHostnameParm ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+        String requisitionName = nrm.getReqName($host);
+        modify($event) {addParm(new Parm("requisitionName",requisitionName))};
+        LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+rule "enrich: Reparent Event to Node by snmphost"
+	salience 100000
+	no-loop true
+	when
+		$event : Event( uei : uei != FINISH_PARENTING_UEI, host != null && host != "", $host : host, nodeid == 0 )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+		Parm(parmName == "requisitionName", $reqName : value.content != "") from $event.parmCollection
+		Parm(parmName == "reparentBySnmphost", value.content == "true") from $event.parmCollection
+	then
+		String logTag = "nodeParenting ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+		LOG.debug("{} {}: event received: \n{}\n",logTag,$uuid,$event);
+		Long nodeId = 0L;
+        nodeId = daoService.getNodeIdByHostname( $host.toLowerCase() );
+		if (nodeId <= 0) {
+			delete( $event );
+			EventBuilder bldrProvisionNode = new EventBuilder(NODE_PROVISIONING_UEI,"Drools");
+			bldrProvisionNode.setHost( InetAddress.getLocalHost().getHostName() )
+			    .addParam("pendingEvent",JaxbUtils.marshal($event)).addParam("requisition_name",(String)$reqName)
+			    .addParam("node_label",$host).addParam("supplied_snmphost",$event.getSnmphost());
+			engine.sendEvent( bldrProvisionNode.getEvent() );
+		} else {
+			String operation = "Re-parented event to node "+nodeId+" based on hostname "+$host;
+			logOp($event, nodeId, operation);
+			$event.setNodeid(nodeId);
+			if ( $event.getParm("node_name") == null && nodeId != 0L ) {
+				String nodeLabel = daoService.getNodeLabelForId(nodeId.intValue());
+				$event.addParm(new Parm("node_name",nodeLabel));
+			}
+			if ( $event.getSeverity() != null && $event.getSeverity().equals("Normal") && $event.getParm("type") == null ) {
+				$event.addParm( new Parm("type","OK") );
+			}
+			LOG.debug( "{} {} : sending event {} for node {}.", logTag, $uuid, uei, nodeId );
+			update($event);
+		}
+		LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+rule "enrich: Generic Reparent Event to Node"
+	salience 100000
+	no-loop true
+	when
+		$event : Event( uei : uei != FINISH_PARENTING_UEI, host != null && host != "", $host : host, nodeid == 0 )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+		Parm(parmName == "requisitionName", $reqName : value.content != "") from $event.parmCollection
+	then
+		String logTag = "nodeParenting ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+		LOG.debug("{} {}: event received: \n{}\n",logTag,$uuid,$event);
+		Long nodeId = 0L;
+        nodeId = daoService.getNodeIdByHostname( $host );
+        try {
+            LOG.info("nodeDao inventory:");
+            daoService.getNodeDao().findAll().forEach(n -> LOG.info("\nnodeLabel: " +
+             "{}\nnodeForeignSource: {}\nnodeForeignId: {}\n",n.getLabel(),n.getForeignSource(),n.getForeignId()));
+        } catch (Exception ex) {
+            System.err.println(ex);
+        }
+		if (nodeId <= 0) {
+            LOG.debug("{} {}: no node found with foreignId {}",
+                    logTag,$uuid,$host.toLowerCase());
+			delete( $event );
+			EventBuilder bldrProvisionNode = new EventBuilder(NODE_PROVISIONING_UEI,"Drools");
+			bldrProvisionNode.setHost( InetAddress.getLocalHost().getHostName() )
+			    .addParam("pendingEvent",JaxbUtils.marshal($event)).addParam("requisition_name",(String)$reqName)
+			    .addParam("node_label",$host);
+			engine.sendEvent( bldrProvisionNode.getEvent() );
+		} else {
+			String operation = "Re-parented event to node "+nodeId+" based on hostname "+$host;
+			logOp($event, nodeId, operation);
+			$event.setNodeid(nodeId);
+			if ( $event.getParm("node_name") == null && nodeId != 0L ) {
+				String nodeLabel = daoService.getNodeLabelForId(nodeId.intValue());
+				$event.addParm(new Parm("node_name",nodeLabel));
+			}
+			if ( $event.getSeverity() != null && $event.getSeverity().equals("Normal") && $event.getParm("type") == null ) {
+				$event.addParm( new Parm("type","OK") );
+			}
+			LOG.debug( "{} {} : sending event {} for node {}.", logTag, $uuid, uei, nodeId );
+			update($event);
+		}
+		LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+rule "refine: Skip Suppression for Events Without Nodes - no UEI transform"
+	salience 99999
+	no-loop true
+	when
+		$e : Event( $nodeId: nodeid == 0, $uei : uei != FINISH_PARENTING_UEI, logMsg : logmsg )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $e.parmCollection
+		Parm(parmName == "transform_uei", value.content == "false") from $e.parmCollection
+	then
+		String logTag = "Outage filter ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+		delete($e);
+		LOG.debug( "{} {}: Skipping outage check - node ID is 0.", logTag, $uuid);
+		String op = logTag + " Skipped outage check - nodeId is 0.";
+		logOp($e, $nodeId, op);
+
+		engine.sendEvent($e);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+// DEPRECATED
+rule "refine: Skip Suppression for Events Without Nodes"
+	salience 99999
+	no-loop true
+	when
+		$e : Event( $nodeId: nodeid == 0, $uei : uei != FINISH_PARENTING_UEI, logMsg : logmsg )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $e.parmCollection
+		not Parm(parmName == "transform_uei", value.content == "false") from $e.parmCollection
+	then
+		String logTag = "Outage filter ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+		delete($e);
+		LOG.debug( "{} {} : Skipping outage check - node ID is 0.", logTag, $uuid);
+		String op = logTag + "Skipped outage check - nodeId is 0.";
+		String newUei =  $uei.replaceAll( UEI_REPLACEMENT_REGEX, ENRICHED_UEI_NAMESPACE );
+		logOp($e, $nodeId, op);
+		$e.setUei(newUei);
+
+		engine.sendEvent($e);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+rule "refine: Skip Suppression for Clear/Recovery Events by type parm - no UEI transform"
+	salience 99999
+	no-loop true
+	when
+		$event : Event( $nodeId: nodeid != 0, $uei : uei != FINISH_PARENTING_UEI, logMsg : logmsg )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+		Parm(parmName == "transform_uei", value.content == "false") from $event.parmCollection
+		Parm(parmName == "type", value.content matches "^(RECOVERY|OK|UP)$") from $event.parmCollection
+	then
+		String logTag = "no_suppress_recovery_type ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+		delete($event);
+		String op = "Clear/Recovery Event - skipped scheduled outage check.";
+		logOp($event, $nodeId, op);
+
+		engine.sendEvent($event);
+		LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+rule "refine: Skip Suppression for Clear/Recovery Events by situation_status parm - no UEI transform"
+	salience 99999
+	no-loop true
+	when
+		$event : Event( $nodeId: nodeid != 0, $uei : uei != FINISH_PARENTING_UEI, logMsg : logmsg )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+		Parm(parmName == "transform_uei", value.content == "false") from $event.parmCollection
+		Parm(parmName == "situation_status", value.content == "N") from $event.parmCollection
+	then
+		String logTag = "no_suppress_recovery_sitstat ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+		delete($event);
+		String op = "Clear/Recovery Event - skipped scheduled outage check.";
+		logOp($event, $nodeId, op);
+
+		engine.sendEvent($event);
+		LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+
+// DEPRECATED
+rule "refine: Skip Suppression for Clear/Recovery Events by type parm"
+	salience 99999
+	no-loop true
+	when
+		$event : Event( $nodeId: nodeid != 0, $uei : uei != FINISH_PARENTING_UEI, logMsg : logmsg )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+		not Parm(parmName == "transform_uei", value.content == "false") from $event.parmCollection
+		Parm(parmName == "type", value.content matches "^(RECOVERY|OK|UP)$") from $event.parmCollection
+	then
+		String logTag = "no_suppress_recovery_deprecated_type ::";
+		LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+		delete($event);
+		String op = "Clear/Recovery Event - skipped scheduled outage check.";
+		String newUei = $uei.replaceAll(UEI_REPLACEMENT_REGEX, ENRICHED_UEI_NAMESPACE);
+		logOp($event, $nodeId, op);
+		$event.setUei(newUei);
+
+		engine.sendEvent($event);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+rule "refine: Skip Suppression for Clear/Recovery Events by situation_status parm"
+	salience 99999
+	no-loop true
+	when
+		$event : Event( $nodeId: nodeid != 0, $uei : uei != FINISH_PARENTING_UEI, logMsg : logmsg )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $event.parmCollection
+		not Parm(parmName == "transform_uei", value.content == "false") from $event.parmCollection
+		Parm(parmName == "situation_status", value.content == "N") from $event.parmCollection
+	then
+		String logTag = "no_suppress_recovery_deprecated_sitstat ::";
+		LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+		delete($event);
+		String op = "Clear/Recovery Event - skipped scheduled outage check.";
+		String newUei = $uei.replaceAll(UEI_REPLACEMENT_REGEX, ENRICHED_UEI_NAMESPACE);
+		logOp($event, $nodeId, op);
+		$event.setUei(newUei);
+
+		engine.sendEvent($event);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+rule "refine: Suppress Events from Nodes in Outages - no UEI transform"
+	salience 99999
+	no-loop true
+	when
+		$e : Event( $nodeId: nodeid != 0, severity != "Normal", $uei : uei != FINISH_PARENTING_UEI, logMsg : logmsg )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $e.parmCollection
+		Parm(parmName == "transform_uei", value.content == "false") from $e.parmCollection
+		not Parm(parmName == "override_maintenance", value.content != null && value.content matches "(?i)yes") from $e.parmCollection
+		not Parm(parmName == "type", value.content matches "^(RECOVERY|OK|UP)$") from $e.parmCollection
+		not Parm(parmName == "situation_status", value.content == "N") from $e.parmCollection
+	then
+		String logTag = "Outage filter ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+		delete( $e );
+		LOG.debug( "{} {} : Checking for outages on node {}", logTag, $uuid, $nodeId );
+		String op;
+        LOG.info( "{} {} : No override set, searching outages.", $uuid, logTag );
+        Boolean outage = nrm.isNodeInOutage($nodeId, pocf);
+        LOG.info ( "{} {} : Result of outage check: {}", logTag, $uuid, outage );
+        if ( outage ) {
+            op = "Node is in an Outage. Original UEI: "+$uei;
+            logOp($e,$nodeId,op);
+            $e.setUei(OUTAGE_SUPPRESSED_UEI);
+            logMsg.setContent("Suppressed: "+logMsg.getContent());
+            logMsg.setDest("logndisplay");
+            $e.setSeverity("Normal");
+            LOG.debug("{} {} : Suppressed by outage, sending {} for node {}.",logTag, $uuid, OUTAGE_SUPPRESSED_UEI,
+                $nodeId);
+        } else {
+            op = "No scheduled outages, releasing event.";
+            logOp($e, $nodeId, op);
+            LOG.debug("{} {} : No outages found, sending event {} for node {}.", logTag, $uuid, $uei, $nodeId);
+        }
+
+		engine.sendEvent($e);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+    end
+
+// DEPRECATED
+rule "refine: Suppress Events from Nodes in Outages"
+	salience 99999
+	no-loop true
+	when
+		$e : Event( $nodeId: nodeid != 0, severity != "Normal", $uei : uei != FINISH_PARENTING_UEI, logMsg : logmsg )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $e.parmCollection
+		not Parm(parmName == "transform_uei", value.content == "false") from $e.parmCollection
+		not Parm(parmName == "override_maintenance", value.content != null && value.content matches "(?i)yes") from $e.parmCollection
+		not Parm(parmName == "type", value.content matches "^(RECOVERY|OK|UP)$") from $e.parmCollection
+		not Parm(parmName == "situation_status", value.content == "N") from $e.parmCollection
+	then
+		String logTag = "outage_filter_deprecated ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+		delete( $e );
+        LOG.debug( "{} {} : Checking for outages on node {}", logTag, $uuid, $nodeId );
+		String op;
+		String newUei;
+        LOG.debug( "{} {} : No override set, searching outages.", logTag, $uuid );
+        Boolean outage = nrm.isNodeInOutage($nodeId, pocf);
+        LOG.debug ( "{} {} : Result of outage check: {}", logTag, $uuid, outage );
+        if ( outage ) {
+            op = "Node is in an Outage. Original UEI: "+$uei;
+            logOp($e,$nodeId,op);
+            $e.setUei(OUTAGE_SUPPRESSED_UEI);
+            logMsg.setContent( "Suppressed: "+logMsg.getContent() );
+            logMsg.setDest("logndisplay");
+            $e.setSeverity("Normal");
+            LOG.debug("{} {} : Suppressed by outage, sending {} for node {}.",logTag, $uuid, OUTAGE_SUPPRESSED_UEI,
+                $nodeId);
+        } else {
+            op = "No scheduled outages, releasing event.";
+            newUei =  $uei.replaceAll(UEI_REPLACEMENT_REGEX, ENRICHED_UEI_NAMESPACE);
+            $e.setUei(newUei);
+            logOp($e, $nodeId, op);
+            LOG.debug("{} {} : No outages found, sending event {} for node {}.", logTag, $uuid, $e.getUei(),
+                $nodeId);
+        }
+
+		engine.sendEvent($e);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+end
+
+rule "refine: Skip Outage Check for override_maintenance = yes - no UEI transform"
+    salience 99999
+    no-loop true
+    when
+        $e : Event( $nodeId: nodeid != 0, severity != "Normal", $uei : uei != FINISH_PARENTING_UEI, logMsg : logmsg )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $e.parmCollection
+        Parm(parmName == "transform_uei", value.content == "false") from $e.parmCollection
+        Parm(parmName == "override_maintenance", value.content != null && value.content matches "(?i)yes",
+                $overrideMaint : value.content) from $e.parmCollection
+        not Parm(parmName == "type", value.content matches "^(RECOVERY|OK|UP)$") from $e.parmCollection
+        not Parm(parmName == "situation_status", value.content == "N") from $e.parmCollection
+    then
+        String logTag = "Outage filter ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+        delete($e);
+        // node may be in an outage, but is important enough to alert anyway
+        LOG.debug( "{} {} :  override_maintenance = {}, not suppressing", logTag, $uuid, $overrideMaint );
+        String op = "override_maintenance = "+$overrideMaint+", bypassing Outage check.";
+        LOG.info( "{} {} : creating new event with UEI {}", logTag, $uuid, $uei );
+        logOp( $e, $nodeId, op);
+        engine.sendEvent($e);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+    end
+
+// DEPRECATED
+rule "refine: Skip Outage Check for override_maintenance = yes"
+    salience 99999
+    no-loop true
+    when
+        $e : Event( nodeid != 0, severity != "Normal", uei != FINISH_PARENTING_UEI, $nodeId: nodeid, $uei : uei )
+        Parm(parmName == "opennms_traceId", value.content != "", $uuid : value.content) from $e.parmCollection
+        not ( Parm(parmName == "transform_uei", value.content == "false") from $e.parmCollection )
+        Parm(parmName == "override_maintenance", value.content != null && value.content matches "(?i)yes",
+                $overrideMaint : value.content) from $e.parmCollection
+        not ( Parm(parmName == "type", value.content matches "^(RECOVERY|OK|UP)$") from $e.parmCollection )
+        not ( Parm(parmName == "situation_status", value.content == "N") from $e.parmCollection )
+    then
+        String logTag = "outage_filter_deprecated ::";
+        LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+        delete($e);
+        LOG.debug("{} {} : overrideMaint is {}", logTag, $uuid, $overrideMaint);
+        String newUei;
+        // node may be in an outage, but is important enough to alert anyway
+        LOG.debug( "{} {} : override_maintenance = {}, not suppressing", logTag, $uuid, $overrideMaint );
+        String op = "override_maintenance = "+$overrideMaint+", bypassing Outage check.";
+        newUei =  $uei.replaceAll(UEI_REPLACEMENT_REGEX, ENRICHED_UEI_NAMESPACE);
+        LOG.debug( "{} {} : creating new event with UEI {}", logTag, $uuid, newUei );
+        logOp( $e, $nodeId, op);
+        $e.setUei(newUei);
+        LOG.debug( "{} {} : sending event {} for node {}.", logTag, $uuid, newUei, $nodeId);
+        engine.sendEvent($e);
+        LOG.info("{} END handling event {}", logTag, $uuid);
+    end
+
+rule "NodeParenting catch-all: Retract any unmatched events"
+	salience -10
+	when
+		$e : Event()
+        Parm(parmName == "opennms_traceId", $uuid : value.content != "") from $e.parmCollection
+	then
+		delete($e);
+		String logTag = "catch-all::Retract_Unmatched ::";
+		LOG.info("{} BEGIN handling event {}", logTag, $uuid);
+		LOG.warn("{} {} : An event with UEI {} for host {} did not match any rules. Retracting from working memory",
+				logTag, $uuid, $e.getUei(),$e.getHost() );
+		LOG.debug("{} {} : Full event: {}",logTag,$uuid,$e);
+		LOG.info("{} END handling event {}", logTag, $uuid);
+	end
+
+
+function void logOp( Event e, Long nodeId, String operation )
+{
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
+	String currentTimeStamp = sdf.format( new Date() );
+	operation = currentTimeStamp+" :: "+operation;
+	if (e.getParm("Operations") != null) {
+		operation = e.getParm("Operations").getValue().getContent()+"<br>"+operation;
+		e.getParm("Operations").setValue( new Value(operation) );
+	} else {
+		e.addParm( new Parm("Operations", operation) );
+	}
+}

@@ -3,7 +3,14 @@
       xmlns="http://xmlns.opennms.org/xsd/drools-engine"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://xmlns.opennms.org/xsd/drools-engine http://xmlns.opennms.org/xsd/drools-engine/drools-engine.xsd">
-  <rule-set name="dao-test">
+  <rule-set name="dao-test-stream" event-processing-mode="stream">
+    <rule-file>dao-test-rules.drl</rule-file>
+    <event>uei.opennms.org/test/droolsDaoTestEvent</event>
+    <app-context>dao-test-engine-context.xml</app-context>
+    <global name="LOG" ref="slf4jLogger"/>
+    <global name="nodeDao" ref="nodeDao" />
+  </rule-set>
+  <rule-set name="dao-test-cloud" event-processing-mode="cloud">
     <rule-file>dao-test-rules.drl</rule-file>
     <event>uei.opennms.org/test/droolsDaoTestEvent</event>
     <app-context>dao-test-engine-context.xml</app-context>
