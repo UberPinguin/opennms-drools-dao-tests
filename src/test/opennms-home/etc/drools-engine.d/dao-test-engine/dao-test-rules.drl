@@ -28,10 +28,11 @@ rule "Find nodeId By Event Host Using foreignId"
         $event : Event(uei == "uei.opennms.org/test/droolsDaoTestEvent", $uei: uei,
                        host != "", $host : host)
         Parm(parmName == "findByForeignId", value.content == "true") from $event.parmCollection
+        Parm(parmName == "foreignSource", value.content != "", $foreignSource : value.content) from $event.parmCollection
     then
         delete($event);
         Event newEvent = JaxbUtils.unmarshal(Event.class,JaxbUtils.marshal($event));
-        OnmsNode node = nodeDao.findByForeignId("unit-test-foreign-source",$host);
+        OnmsNode node = nodeDao.findByForeignId($foreignSource,$host);
         if (node != null) {
             LOG.info("Host {} resolved to nodeId {}", $host, node.getId());
             newEvent.setNodeid(node.getId().longValue());

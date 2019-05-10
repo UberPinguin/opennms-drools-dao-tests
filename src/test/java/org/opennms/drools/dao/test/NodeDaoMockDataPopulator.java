@@ -1,6 +1,7 @@
 package org.opennms.drools.dao.test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.easymock.EasyMock;
@@ -22,10 +23,12 @@ public class NodeDaoMockDataPopulator {
     private OnmsNode m_node6;
     private OnmsNode m_node7;
     private OnmsNode m_node8;
+    private OnmsNode m_nodeCustomCloud;
+    private OnmsNode m_nodeCustomStream;
 
     private List<OnmsNode> m_nodes;
 
-    public void populateDatabase() {
+    private void populateNodes() {
         m_nodes = new ArrayList<>();
 
         final NetworkBuilder builder = new NetworkBuilder();
@@ -62,7 +65,16 @@ public class NodeDaoMockDataPopulator {
         final OnmsNode node8 = builder.getCurrentNode();
         setNode8(node8);
 
-        m_nodeDao.flush();
+        builder.addNode("unit-test-foreign-id-new-node-cloud").setForeignSource("unit-test-foreign-source")
+                .setForeignId("unit-test-foreign-id-new-node-cloud").setType(OnmsNode.NodeType.ACTIVE);
+        final OnmsNode nodeCustomCloud = builder.getCurrentNode();
+        setNodeCustomCloud(nodeCustomCloud);
+
+        builder.addNode("unit-test-foreign-id-new-node-stream").setForeignSource("unit-test-foreign-source")
+                .setForeignId("unit-test-foreign-id-new-node-stream").setType(OnmsNode.NodeType.ACTIVE);
+        final OnmsNode nodeCustomStream = builder.getCurrentNode();
+        setNodeCustomStream(nodeCustomStream);
+
     }
 
     public NodeDao getNodeDao() {
@@ -81,7 +93,8 @@ public class NodeDaoMockDataPopulator {
         return m_nodes;
     }
 
-    public void setUpMock() {
+    void setUpMock() {
+        populateNodes();
         EasyMock.expect(m_nodeDao.save(m_node1)).andReturn(1).atLeastOnce();
         EasyMock.expect(m_nodeDao.save(m_node2)).andReturn(2).atLeastOnce();
         EasyMock.expect(m_nodeDao.save(m_node3)).andReturn(3).atLeastOnce();
@@ -90,6 +103,7 @@ public class NodeDaoMockDataPopulator {
         EasyMock.expect(m_nodeDao.save(m_node6)).andReturn(6).atLeastOnce();
         EasyMock.expect(m_nodeDao.save(m_node7)).andReturn(7).atLeastOnce();
         EasyMock.expect(m_nodeDao.save(m_node8)).andReturn(8).atLeastOnce();
+        EasyMock.expect(m_nodeDao.save(m_nodeCustomCloud)).andReturn(9).atLeastOnce();
         EasyMock.expect(m_nodeDao.get(1)).andReturn(m_node1).anyTimes();
         EasyMock.expect(m_nodeDao.get(2)).andReturn(m_node2).anyTimes();
         EasyMock.expect(m_nodeDao.get(3)).andReturn(m_node3).anyTimes();
@@ -98,6 +112,29 @@ public class NodeDaoMockDataPopulator {
         EasyMock.expect(m_nodeDao.get(6)).andReturn(m_node6).anyTimes();
         EasyMock.expect(m_nodeDao.get(7)).andReturn(m_node7).anyTimes();
         EasyMock.expect(m_nodeDao.get(8)).andReturn(m_node8).anyTimes();
+        EasyMock.expect(m_nodeDao.get(9)).andReturn(m_nodeCustomCloud).anyTimes();
+        EasyMock.expect(m_nodeDao.get(10)).andReturn(m_nodeCustomStream).anyTimes();
+        EasyMock.expect(m_nodeDao.findAll()).andReturn(m_nodes).anyTimes();
+        EasyMock.expect(m_nodeDao.findByLabel("node1")).andReturn(Collections.singletonList(m_node1)).anyTimes();
+        EasyMock.expect(m_nodeDao.findByLabel("node2")).andReturn(Collections.singletonList(m_node2)).anyTimes();
+        EasyMock.expect(m_nodeDao.findByLabel("node3")).andReturn(Collections.singletonList(m_node3)).anyTimes();
+        EasyMock.expect(m_nodeDao.findByLabel("node4")).andReturn(Collections.singletonList(m_node4)).anyTimes();
+        EasyMock.expect(m_nodeDao.findByLabel("node5")).andReturn(Collections.singletonList(m_node5)).anyTimes();
+        EasyMock.expect(m_nodeDao.findByLabel("node6")).andReturn(Collections.singletonList(m_node6)).anyTimes();
+        EasyMock.expect(m_nodeDao.findByLabel("node7")).andReturn(Collections.singletonList(m_node7)).anyTimes();
+        EasyMock.expect(m_nodeDao.findByLabel("node8")).andReturn(Collections.singletonList(m_node8)).anyTimes();
+        EasyMock.expect(m_nodeDao.findByLabel("unit-test-foreign-id-new-node-cloud")).andReturn(Collections.singletonList(m_nodeCustomCloud)).anyTimes();
+        EasyMock.expect(m_nodeDao.findByLabel("unit-test-foreign-id-new-node-stream")).andReturn(Collections.singletonList(m_nodeCustomStream)).anyTimes();
+        EasyMock.expect(m_nodeDao.findByForeignId("import:","node1")).andReturn(m_node1).anyTimes();
+        EasyMock.expect(m_nodeDao.findByForeignId("import:","node2")).andReturn(m_node2).anyTimes();
+        EasyMock.expect(m_nodeDao.findByForeignId("import:","node3")).andReturn(m_node3).anyTimes();
+        EasyMock.expect(m_nodeDao.findByForeignId("import:","node4")).andReturn(m_node4).anyTimes();
+        EasyMock.expect(m_nodeDao.findByForeignId("import:","node5")).andReturn(m_node5).anyTimes();
+        EasyMock.expect(m_nodeDao.findByForeignId("import:","node6")).andReturn(m_node6).anyTimes();
+        EasyMock.expect(m_nodeDao.findByForeignId("import:","node7")).andReturn(m_node7).anyTimes();
+        EasyMock.expect(m_nodeDao.findByForeignId("import:","node8")).andReturn(m_node8).anyTimes();
+        EasyMock.expect(m_nodeDao.findByForeignId("unit-test-foreign-source","unit-test-foreign-id-new-node-cloud")).andReturn(m_nodeCustomCloud).anyTimes();
+        EasyMock.expect(m_nodeDao.findByForeignId("unit-test-foreign-source","unit-test-foreign-id-new-node-stream")).andReturn(m_nodeCustomStream).anyTimes();
         EasyMock.replay(m_nodeDao);
     }
 
@@ -120,6 +157,8 @@ public class NodeDaoMockDataPopulator {
                 break;
             case 8: node = m_node8;
                 break;
+            case 9: node = m_nodeCustomCloud;
+                break;
         }
         return node;
     }
@@ -128,56 +167,59 @@ public class NodeDaoMockDataPopulator {
         node1.setId(1);
         m_node1 = node1;
         m_nodes.add(m_node1);
-        m_nodeDao.save(m_node1);
     }
 
     private void setNode2(final OnmsNode node2) {
         node2.setId(2);
         m_node2 = node2;
         m_nodes.add(m_node2);
-        m_nodeDao.save(m_node2);
-     }
+    }
 
     private void setNode3(final OnmsNode node3) {
         node3.setId(3);
         m_node3 = node3;
         m_nodes.add(m_node3);
-        m_nodeDao.save(m_node3);
-     }
+    }
 
     private void setNode4(final OnmsNode node4) {
         node4.setId(4);
         m_node4 = node4;
         m_nodes.add(m_node4);
-        m_nodeDao.save(m_node4);
-     }
+    }
 
     private void setNode5(final OnmsNode node5) {
         node5.setId(5);
         m_node5 = node5;
         m_nodes.add(m_node5);
-        m_nodeDao.save(m_node5);
-     }
+    }
 
     private void setNode6(final OnmsNode node6) {
         node6.setId(6);
         m_node6 = node6;
         m_nodes.add(m_node6);
-        m_nodeDao.save(m_node6);
-     }
+    }
 
     private void setNode7(final OnmsNode node7) {
         node7.setId(7);
         m_node7 = node7;
         m_nodes.add(m_node7);
-        m_nodeDao.save(m_node7);
-     }
+    }
 
     private void setNode8(final OnmsNode node8) {
         node8.setId(8);
         m_node8 = node8;
         m_nodes.add(m_node8);
-        m_nodeDao.save(m_node8);
-     }
+    }
 
+    private void setNodeCustomCloud(final OnmsNode nodeCustomCloud) {
+       nodeCustomCloud.setId(9);
+       m_nodeCustomCloud = nodeCustomCloud;
+       m_nodes.add(m_nodeCustomCloud);
+    }
+
+    private void setNodeCustomStream(final OnmsNode nodeCustomStream) {
+       nodeCustomStream.setId(10);
+       m_nodeCustomStream = nodeCustomStream;
+       m_nodes.add(m_nodeCustomStream);
+    }
 }
