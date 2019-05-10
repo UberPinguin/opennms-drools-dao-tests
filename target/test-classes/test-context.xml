@@ -3,8 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
-  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
-  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
 ">
 
     <bean id="droolsCorrelationEngineBuilderConfigurationDirectory" class="java.io.File">
@@ -13,6 +13,66 @@
     <bean id="serviceRegistry" class="org.opennms.core.soa.support.DefaultServiceRegistry" />
     <bean id="eventIpcManager" class="org.opennms.netmgt.dao.mock.MockEventIpcManager" />
     <bean id="metricRegistry" class="com.codahale.metrics.MetricRegistry" />
+
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true"
+          id="platformTransactionManager">
+        <constructor-arg value="org.springframework.transaction.PlatformTransactionManager" />
+    </bean>
+
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="alarmDao">
+        <constructor-arg value="org.opennms.netmgt.dao.api.AlarmDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="eventDao">
+        <constructor-arg value="org.opennms.netmgt.dao.api.EventDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="nodeDao">
+        <constructor-arg value="org.opennms.netmgt.dao.api.NodeDao"/>
+    </bean>
+
+    <bean id="nodeDaoPopulator" class="org.opennms.drools.dao.test.NodeDaoMockDataPopulator" />
+
+    <!--    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="distPollerDao">
+        <constructor-arg value="org.opennms.netmgt.dao.api.DistPollerDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="cdpLinkDao">
+        <constructor-arg value="org.opennms.netmgt.dao.api.CdpLinkDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="ipInterfaceDao">
+        <constructor-arg value="org.opennms.netmgt.dao.api.IpInterfaceDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="snmpInterfaceDao">
+        <constructor-arg value="org.opennms.netmgt.dao.api.SnmpInterfaceDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="monitoredServiceDao">
+        <constructor-arg value="org.opennms.netmgt.dao.api.MonitoredServiceDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="assetRecordDao">
+        <constructor-arg value="org.opennms.netmgt.dao.api.AssetRecordDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="categoryDao">
+        <constructor-arg value="org.opennms.netmgt.dao.api.CategoryDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="outageDao">
+        <constructor-arg value="org.opennms.netmgt.dao.api.OutageDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="notificationDao">
+      <constructor-arg value="org.opennms.netmgt.dao.api.NotificationDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="userNotificationDao">
+      <constructor-arg value="org.opennms.netmgt.dao.api.UserNotificationDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="monitoringLocationDao">
+      <constructor-arg value="org.opennms.netmgt.dao.api.MonitoringLocationDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="locationMonitorDao">
+      <constructor-arg value="org.opennms.netmgt.dao.api.LocationMonitorDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="acknowledgmentDao">
+      <constructor-arg value="org.opennms.netmgt.dao.api.AcknowledgmentDao"/>
+    </bean>
+    <bean class="org.easymock.EasyMock" factory-method="createNiceMock" primary="true" id="serviceTypeDao">
+        <constructor-arg value="org.opennms.netmgt.dao.api.ServiceTypeDao"/>
+    </bean>-->
 
     <bean id="droolsCorrelationEngineBuilder" class="org.opennms.netmgt.correlation.drools.DroolsCorrelationEngineBuilder">
         <property name="eventIpcManager" ref="eventIpcManager" />

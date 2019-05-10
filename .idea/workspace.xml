@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="757be2f6-78b1-4018-97dd-0f1fd6c76dc1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/NodeDaoMockDataPopulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/CorrelationRulesTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/CorrelationRulesTestCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/DroolsNodeDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/DroolsNodeDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/drools-engine.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/drools-engine.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/opennms/drools/dao/test/CorrelationRulesTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/opennms/drools/dao/test/CorrelationRulesTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/opennms/drools/dao/test/DroolsNodeDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/opennms/drools/dao/test/DroolsNodeDaoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test-context.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -16,84 +22,80 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/DroolsNodeDaoTest.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="306">
-                    <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                      <element signature="e#1467#1468#0" expanded="true" />
-                      <element signature="e#1507#1508#0" expanded="true" />
-                      <element signature="e#1596#1627#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-engine-context.xml">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="418">
-                    <caret line="19" selection-start-line="19" selection-end-line="19" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-    <window id="3">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/NodeParenting.drl">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="330">
-                    <caret line="71" selection-start-line="71" selection-end-line="71" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/drools-engine.xml">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/DroolsNodeDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+            <state>
+              <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1400#1401#0" expanded="true" />
+                <element signature="e#1440#1441#0" expanded="true" />
+                <element signature="e#1588#1619#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/test-fixture.properties">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="jar://$MAVEN_REPOSITORY$/org/opennms/opennms-dao/2018.1.6/opennms-dao-2018.1.6-sources.jar!/org/opennms/netmgt/dao/DatabasePopulator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="119" selection-start-line="119" selection-end-line="119" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-engine.properties">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/test/resources/test-context.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/NodeDaoMockDataPopulator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="86" column="9" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2459#2460#0" expanded="true" />
+                <element signature="e#2490#2491#0" expanded="true" />
+                <element signature="e#2548#2549#0" expanded="true" />
+                <element signature="e#2574#2575#0" expanded="true" />
+                <element signature="e#2651#2652#0" expanded="true" />
+                <element signature="e#2692#2693#0" expanded="true" />
+                <element signature="e#2712#2713#0" expanded="true" />
+                <element signature="e#2741#2742#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/drools-engine.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/CorrelationRulesTestCase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-594">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -122,7 +124,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/test/java/org/opennms/opennms-drools-dao-test/CorrelationRulesTestCase.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/test-context.xml" />
         <option value="$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-engine-context.xml" />
         <option value="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/NodeDaoTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -130,7 +131,11 @@
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/drools-engine.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/MockDataPopulator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/CorrelationRulesTestCase.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/test-context.xml" />
         <option value="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/DroolsNodeDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/NodeDaoMockDataPopulator.java" />
       </list>
     </option>
   </component>
@@ -274,7 +279,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DroolsNodeDaoTest">
+  <component name="RunManager" selected="JUnit.DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode">
     <configuration name="DroolsNodeDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="opennms-drools-dao-test" />
       <shortenClasspath name="MANIFEST" />
@@ -287,23 +292,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DroolsNodeDaoTest.identifyNodeByForeignId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DroolsNodeDaoTest.testCreateNewOnmsNodeAndCorrelateEventWithItCloudMode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="opennms-drools-dao-test" />
       <shortenClasspath name="MANIFEST" />
       <option name="PACKAGE_NAME" value="org.opennms.drools.dao.test" />
       <option name="MAIN_CLASS_NAME" value="org.opennms.drools.dao.test.DroolsNodeDaoTest" />
-      <option name="METHOD_NAME" value="identifyNodeByForeignId" />
+      <option name="METHOD_NAME" value="testCreateNewOnmsNodeAndCorrelateEventWithItCloudMode" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DroolsNodeDaoTest.identifyNodeByLabel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DroolsNodeDaoTest.testCreateNewOnmsNodeAndCorrelateEventWithItStreamMode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="opennms-drools-dao-test" />
       <shortenClasspath name="MANIFEST" />
       <option name="PACKAGE_NAME" value="org.opennms.drools.dao.test" />
       <option name="MAIN_CLASS_NAME" value="org.opennms.drools.dao.test.DroolsNodeDaoTest" />
-      <option name="METHOD_NAME" value="identifyNodeByLabel" />
+      <option name="METHOD_NAME" value="testCreateNewOnmsNodeAndCorrelateEventWithItStreamMode" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="opennms-drools-dao-test" />
+      <shortenClasspath name="MANIFEST" />
+      <option name="PACKAGE_NAME" value="org.opennms.drools.dao.test" />
+      <option name="MAIN_CLASS_NAME" value="org.opennms.drools.dao.test.DroolsNodeDaoTest" />
+      <option name="METHOD_NAME" value="testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithSimpleDaoStreamMode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="opennms-drools-dao-test" />
+      <shortenClasspath name="MANIFEST" />
+      <option name="PACKAGE_NAME" value="org.opennms.drools.dao.test" />
+      <option name="MAIN_CLASS_NAME" value="org.opennms.drools.dao.test.DroolsNodeDaoTest" />
+      <option name="METHOD_NAME" value="testIdentifyNodeByForeignIdWithSimpleDaoStreamMode" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
       <method v="2">
@@ -322,9 +352,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" />
         <item itemvalue="JUnit.DroolsNodeDaoTest" />
-        <item itemvalue="JUnit.DroolsNodeDaoTest.identifyNodeByForeignId" />
-        <item itemvalue="JUnit.DroolsNodeDaoTest.identifyNodeByLabel" />
+        <item itemvalue="JUnit.DroolsNodeDaoTest.testCreateNewOnmsNodeAndCorrelateEventWithItStreamMode" />
+        <item itemvalue="JUnit.DroolsNodeDaoTest.testCreateNewOnmsNodeAndCorrelateEventWithItCloudMode" />
+        <item itemvalue="JUnit.DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithSimpleDaoStreamMode" />
       </list>
     </recent_temporary>
   </component>
@@ -340,39 +372,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DroolsNodeDaoTest_identifyNodeByLabel - 2019.05.06 at 16h 26m 54s.xml">
-      <configuration name="DroolsNodeDaoTest.identifyNodeByLabel" configurationId="JUnit" />
+    <history-entry file="DroolsNodeDaoTest_testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode - 2019.05.09 at 16h 42m 21s.xml">
+      <configuration name="DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DroolsNodeDaoTest_identifyNodeByLabel - 2019.05.06 at 16h 27m 39s.xml">
-      <configuration name="DroolsNodeDaoTest.identifyNodeByLabel" configurationId="JUnit" />
+    <history-entry file="DroolsNodeDaoTest_testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode - 2019.05.09 at 16h 59m 06s.xml">
+      <configuration name="DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DroolsNodeDaoTest_identifyNodeByForeignId - 2019.05.06 at 16h 31m 14s.xml">
-      <configuration name="DroolsNodeDaoTest.identifyNodeByForeignId" configurationId="JUnit" />
+    <history-entry file="DroolsNodeDaoTest_testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode - 2019.05.09 at 17h 00m 09s.xml">
+      <configuration name="DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DroolsNodeDaoTest_identifyNodeByForeignId - 2019.05.06 at 16h 33m 42s.xml">
-      <configuration name="DroolsNodeDaoTest.identifyNodeByForeignId" configurationId="JUnit" />
+    <history-entry file="DroolsNodeDaoTest_testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode - 2019.05.09 at 17h 00m 43s.xml">
+      <configuration name="DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DroolsNodeDaoTest_identifyNodeByForeignId - 2019.05.06 at 16h 35m 42s.xml">
-      <configuration name="DroolsNodeDaoTest.identifyNodeByForeignId" configurationId="JUnit" />
+    <history-entry file="DroolsNodeDaoTest_testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode - 2019.05.09 at 17h 01m 44s.xml">
+      <configuration name="DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DroolsNodeDaoTest_identifyNodeByForeignId - 2019.05.06 at 16h 37m 37s.xml">
-      <configuration name="DroolsNodeDaoTest.identifyNodeByForeignId" configurationId="JUnit" />
+    <history-entry file="DroolsNodeDaoTest_testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode - 2019.05.09 at 17h 03m 16s.xml">
+      <configuration name="DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DroolsNodeDaoTest - 2019.05.06 at 16h 42m 03s.xml">
-      <configuration name="DroolsNodeDaoTest" configurationId="JUnit" />
+    <history-entry file="DroolsNodeDaoTest_testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode - 2019.05.09 at 17h 03m 41s.xml">
+      <configuration name="DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DroolsNodeDaoTest - 2019.05.06 at 17h 54m 00s.xml">
-      <configuration name="DroolsNodeDaoTest" configurationId="JUnit" />
+    <history-entry file="DroolsNodeDaoTest_testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode - 2019.05.09 at 17h 04m 05s.xml">
+      <configuration name="DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DroolsNodeDaoTest - 2019.05.06 at 18h 12m 11s.xml">
-      <configuration name="DroolsNodeDaoTest" configurationId="JUnit" />
+    <history-entry file="DroolsNodeDaoTest_testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode - 2019.05.09 at 17h 04m 32s.xml">
+      <configuration name="DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DroolsNodeDaoTest - 2019.05.08 at 13h 24m 25s.xml">
-      <configuration name="DroolsNodeDaoTest" configurationId="JUnit" />
+    <history-entry file="DroolsNodeDaoTest_testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode - 2019.05.09 at 17h 04m 53s.xml">
+      <configuration name="DroolsNodeDaoTest.testIdentifyNodeByForeignIdWithKieSessionDaoStreamMode" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7851000" />
+    <option name="totallyTimeSpent" value="32836000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -384,16 +416,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25266525" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.14658849" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.38353196" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.41170096" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -426,29 +458,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/dao-test-engine.properties" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/CorrelationRulesTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-463">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-engine-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/test-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -469,6 +478,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/NodeParenting.drl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-engine-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/dao-test-rules.drl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -476,22 +499,123 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/NodeDaoMockDataPopulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/opennms/opennms-dao/2018.1.6/opennms-dao-2018.1.6-sources.jar!/org/opennms/netmgt/dao/DatabasePopulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/opennms-home/etc/drools-engine.d/dao-test-engine/drools-engine.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar!/java/lang/Thread.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/opennms/opennms-dao-api/2018.1.6/opennms-dao-api-2018.1.6-sources.jar!/org/opennms/netmgt/dao/api/OnmsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/easymock/easymock/3.4/easymock-3.4.jar!/org/easymock/internal/MocksControl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/opennms/opennms-dao-mock/2018.1.6/opennms-dao-mock-2018.1.6-sources.jar!/org/opennms/netmgt/dao/mock/MockNodeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="87" column="19" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/servicemix/bundles/org.apache.servicemix.bundles.spring-orm/4.2.9.RELEASE_1/org.apache.servicemix.bundles.spring-orm-4.2.9.RELEASE_1.jar!/org/springframework/orm/hibernate3/HibernateTemplate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="357" column="24" selection-start-line="357" selection-start-column="24" selection-end-line="357" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/opennms/opennms-dao/2018.1.6/opennms-dao-2018.1.6-sources.jar!/org/opennms/netmgt/dao/hibernate/AbstractDaoHibernate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="374" column="45" lean-forward="true" selection-start-line="374" selection-start-column="45" selection-end-line="374" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/opennms/opennms-dao-mock/2018.1.6/opennms-dao-mock-2018.1.6-sources.jar!/org/opennms/netmgt/dao/mock/AbstractMockDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="165" column="13" selection-start-line="165" selection-start-column="13" selection-end-line="165" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/DroolsNodeDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        <state>
+          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1467#1468#0" expanded="true" />
-            <element signature="e#1507#1508#0" expanded="true" />
-            <element signature="e#1596#1627#0" expanded="true" />
+            <element signature="e#1400#1401#0" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1588#1619#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/test-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/CorrelationRulesTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-594">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/opennms/drools/dao/test/NodeDaoMockDataPopulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="86" column="9" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2459#2460#0" expanded="true" />
+            <element signature="e#2490#2491#0" expanded="true" />
+            <element signature="e#2548#2549#0" expanded="true" />
+            <element signature="e#2574#2575#0" expanded="true" />
+            <element signature="e#2651#2652#0" expanded="true" />
+            <element signature="e#2692#2693#0" expanded="true" />
+            <element signature="e#2712#2713#0" expanded="true" />
+            <element signature="e#2741#2742#0" expanded="true" />
           </folding>
         </state>
       </provider>
