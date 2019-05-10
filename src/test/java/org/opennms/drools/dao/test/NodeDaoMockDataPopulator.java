@@ -25,7 +25,7 @@ public class NodeDaoMockDataPopulator {
 
     private List<OnmsNode> m_nodes;
 
-    public void populateDatabase() {
+    private void populateNodes() {
         m_nodes = new ArrayList<>();
 
         final NetworkBuilder builder = new NetworkBuilder();
@@ -82,6 +82,7 @@ public class NodeDaoMockDataPopulator {
     }
 
     public void setUpMock() {
+        populateNodes();
         EasyMock.expect(m_nodeDao.save(m_node1)).andReturn(1).atLeastOnce();
         EasyMock.expect(m_nodeDao.save(m_node2)).andReturn(2).atLeastOnce();
         EasyMock.expect(m_nodeDao.save(m_node3)).andReturn(3).atLeastOnce();
@@ -128,56 +129,48 @@ public class NodeDaoMockDataPopulator {
         node1.setId(1);
         m_node1 = node1;
         m_nodes.add(m_node1);
-        m_nodeDao.save(m_node1);
     }
 
     private void setNode2(final OnmsNode node2) {
         node2.setId(2);
         m_node2 = node2;
         m_nodes.add(m_node2);
-        m_nodeDao.save(m_node2);
      }
 
     private void setNode3(final OnmsNode node3) {
         node3.setId(3);
         m_node3 = node3;
         m_nodes.add(m_node3);
-        m_nodeDao.save(m_node3);
      }
 
     private void setNode4(final OnmsNode node4) {
         node4.setId(4);
         m_node4 = node4;
         m_nodes.add(m_node4);
-        m_nodeDao.save(m_node4);
      }
 
     private void setNode5(final OnmsNode node5) {
         node5.setId(5);
         m_node5 = node5;
         m_nodes.add(m_node5);
-        m_nodeDao.save(m_node5);
      }
 
     private void setNode6(final OnmsNode node6) {
         node6.setId(6);
         m_node6 = node6;
         m_nodes.add(m_node6);
-        m_nodeDao.save(m_node6);
      }
 
     private void setNode7(final OnmsNode node7) {
         node7.setId(7);
         m_node7 = node7;
         m_nodes.add(m_node7);
-        m_nodeDao.save(m_node7);
      }
 
     private void setNode8(final OnmsNode node8) {
         node8.setId(8);
         m_node8 = node8;
         m_nodes.add(m_node8);
-        m_nodeDao.save(m_node8);
      }
 
 }
