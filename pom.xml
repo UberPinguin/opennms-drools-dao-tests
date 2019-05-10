@@ -76,7 +76,7 @@
     <javassistVersion>3.18.2-GA</javassistVersion>
     <javaxMailVersion>1.4.5</javaxMailVersion>
     <junitVersion>4.12</junitVersion>
-    <opennms.version>2018.1.6</opennms.version>
+    <opennms.version>25.0.0-SNAPSHOT</opennms.version>
     <org.jsonVersion>20140107</org.jsonVersion>
 
     <!-- Versions from OpenNMS's root org.opennms:opennms:2018.1.6 -->
@@ -311,12 +311,6 @@
       <groupId>javax.inject</groupId>
       <artifactId>javax.inject</artifactId>
       <version>1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.jms</groupId>
-      <artifactId>jms</artifactId>
-      <version>1.1</version>
     </dependency>
 
     <dependency>

@@ -1,5 +1,7 @@
 package org.opennms.drools.dao.test;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.opennms.core.soa.ServiceRegistry;
@@ -14,10 +16,7 @@ import org.opennms.netmgt.model.events.EventBuilder;
 import org.opennms.netmgt.model.monitoringLocations.OnmsMonitoringLocation;
 import org.opennms.netmgt.xml.event.Event;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.transaction.BeforeTransaction;
 import org.springframework.transaction.annotation.Transactional;
-
-import static org.junit.Assert.assertEquals;
 
 @JUnitTemporaryDatabase(dirtiesContext=false, tempDbClass=MockDatabase.class)
 public class DroolsNodeDaoTest extends CorrelationRulesTestCase {
@@ -44,14 +43,11 @@ public class DroolsNodeDaoTest extends CorrelationRulesTestCase {
     }
 
     @Before
-    @BeforeTransaction
-    @SuppressWarnings("Duplicates")
     public void setUp() {
         getAnticipator().reset();
         m_engine_cloud = findEngineByName("dao-test-cloud");
         m_engine_stream = findEngineByName("dao-test-stream");
         m_nodeDaoPopulator.setUpMock();
-        m_nodeDaoPopulator.populateDatabase();
     }
 
     @Test
